@@ -125,7 +125,7 @@
             <div class="col-sm-3 filterDiv completed">
               <a href="#" class="orderCard">
                 <div class="card text-white bg-success mb-3 " style="max-width: 18rem;height: 150px;">
-                  <h2 style="text-align: center;margin-top: auto;margin-bottom: auto;">ORDER 001</h2>
+                  <h2 style="text-align: center;margin-top: auto;margin-bottom: auto;">{{$order->orderCode}}</h2>
                 </div>
               </a>
             </div>
@@ -146,7 +146,7 @@
         <div class="col-sm-3 filterDiv processing">
           <a href="#" class="orderCard">
             <div class="card text-white bg-warning mb-3 " style="max-width: 18rem;height: 150px;">
-              <h2 style="text-align: center;margin-top: auto;margin-bottom: auto;">ORDER 001</h2>
+              <h2 style="text-align: center;margin-top: auto;margin-bottom: auto;">{{$order->orderCode}}</h2>
             </div>
           </a>
         </div>
@@ -167,7 +167,7 @@
         <div class="col-sm-3 filterDiv pending">
           <a href="#" class="orderCard">
             <div class="card text-white bg-danger mb-3 " style="max-width: 18rem;height: 150px;">
-              <h2 style="text-align: center;margin-top: auto;margin-bottom: auto;">ORDER 001</h2>
+              <h2 style="text-align: center;margin-top: auto;margin-bottom: auto;">{{$order->orderCode}}</h2>
             </div>
           </a>
         </div>
