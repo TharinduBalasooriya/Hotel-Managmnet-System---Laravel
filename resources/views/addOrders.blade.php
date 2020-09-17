@@ -93,14 +93,14 @@
         <h1 style="text-align: center;margin-top: 10px;">Add a new Order</h1>
 
         <!--FORM STARTS HERE-->
-        <form action="/addNewOrder" method="POST">
+        <form action="/addNewOrder" method="POST" class="formDesign">
                 {{csrf_field()}}
             <div class="row ">
               <div class="col-sm-4 orderFormSide">
 
               </div>
               <div class="col-sm-8 orderFormRSide ">
-                <h3 style="text-align: center;">Customer Details</h3>
+                <h3 class="orderDetailsH">Customer Details</h3>
 
 
                 <div class="form-group">
@@ -112,16 +112,33 @@
                   <label for="customerMobile">Customer Mobile Number </label>
                   <input type="number" class="form-control" name="customerMobile" placeholder="07X -XXX-XX-XX" required>
                 </div>
+
+                <div class="form-group">
+                  <label for="customerMobile">Customer Mobile Email </label>
+                  <input type="email" class="form-control" name="customerEmail" placeholder="tharinduudana66@gmail.com" >
+                </div>
       
                 <br/>
-                <h3>Order Details</h3>
+                <h3 class="orderDetailsH">Order Details</h3>
     
               <div class="form-group">
-                <label for="orderID">Order ID</label>
+                <label for="orderID">Order Code</label>
                 <input type="text" class="form-control" id="orderID" placeholder="OR001" name="orderCode">
               </div>
+              <div class="form-group">
+                <span>Select Order Type</span>
 
-              <h3>Select Foods</h3>
+                <div class="form-check">
+                  <label class="form-check-label" for="radio1">
+                    <input type="radio" class="form-check-input" id="radio1" name="orderType" value="take-away" checked> Take-Away
+                  </label> <br/>
+                  <label class="form-check-label" for="radio1">
+                    <input type="radio" class="form-check-input" id="radio1" name="orderType" value="take-away" checked> Dine-in
+                  </label>
+                </div>
+              </div>
+
+              <h3 class ="orderDetailsH">Select Foods</h3>
               <div class="form-group ">
                 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name" class="form-control">
     
@@ -140,7 +157,12 @@
                   
                 </ul> 
               </div>
-                <input type="submit" class="btn btn-primary">
+                
+                    <div class="form-group" style="display: flex;justify-content: center;" >
+                        <button type="submit" class="btn btn-primary">submit</button>
+                    </div>
+                
+                
               </div>
             </div>
            

@@ -23,5 +23,6 @@ Route::get('/orders', function () {
 
 Route::get('/addOrders', 'orderController@goToAdd');
 Route::get('/orderList', 'orderController@goToOrder');
+Route::get('/viewOrderDetails/{id}/{code}', 'orderController@viewDetails');
 
 Route::post('/addNewOrder','orderController@store');

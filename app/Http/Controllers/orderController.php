@@ -17,8 +17,11 @@ class orderController extends Controller
         $quantities = $request -> qty;
 
         $order -> orderCode = $request -> orderCode;
+        $order -> orderType = $request -> orderType;
+
         $order -> customerName = $request -> customerName;
         $order -> customerMobile = $request -> customerMobile;
+        $order -> customerEmail = $request ->customerEmail;
         $x = 0;
         foreach($idCollection as $cid){
             if($quantities[$x] > 0){
@@ -55,5 +58,13 @@ class orderController extends Controller
         return view('orderList') -> with('orders',$allData);  
     }
 
+    public function viewDetails($id){
+        $order = Order::find($id);
+        $ordeCode = $order -> orderCode;
+        $foodList = order_item::whereIn('orderCode', [$ordeCode])->get();
+        
+        return view();
+
+    }
 
 }
