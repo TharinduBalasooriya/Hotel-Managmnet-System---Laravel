@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->string('orderCode');
             $table->string('orderType');
-            $table->string('orderStatus') -> default('PEN');
+            $table->string('orderStatus') -> default('PENDING');
             $table->string('customerName');
             $table->string('customerEmail');
             $table->integer('customerMobile');

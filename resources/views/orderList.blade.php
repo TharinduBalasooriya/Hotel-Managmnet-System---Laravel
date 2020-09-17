@@ -121,7 +121,7 @@
           @php
             $orderStat = $order->orderStatus;
           @endphp
-          @if($orderStat == "COM")
+          @if($orderStat == "COMPLETED")
             <div class="col-sm-3 filterDiv completed">
               <a href="/viewOrderDetails/{{$order->id}}" class="orderCard">
                 <div class="card text-white bg-success mb-3 " style="max-width: 18rem;height: 150px;">
@@ -141,7 +141,7 @@
           @php
             $orderStat = $order->orderStatus;
           @endphp
-          @if($orderStat == "PROC")
+          @if($orderStat == "PROCESSING")
         
         <div class="col-sm-3 filterDiv processing">
           <a href="/viewOrderDetails/{{$order->id}}" class="orderCard">
@@ -162,7 +162,7 @@
           @php
             $orderStat = $order->orderStatus;
           @endphp
-          @if($orderStat == "PEN")
+          @if($orderStat == "PENDING")
         
         <div class="col-sm-3 filterDiv pending">
           <a href="/viewOrderDetails/{{$order->id}}" class="orderCard">

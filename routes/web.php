@@ -23,6 +23,8 @@ Route::get('/orders', function () {
 
 Route::get('/addOrders', 'orderController@goToAdd');
 Route::get('/orderList', 'orderController@goToOrder');
-Route::get('/viewOrderDetails/{id}/{code}', 'orderController@viewDetails');
+Route::get('/viewOrderDetails/{id}', 'orderController@viewDetails');
 
 Route::post('/addNewOrder','orderController@store');
+Route::post('/updateOrderStatus','orderController@updateStatus');
+Route::post('/deleteOrder','orderController@deleteOrder');

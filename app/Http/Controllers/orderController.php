@@ -58,12 +58,48 @@ class orderController extends Controller
         return view('orderList') -> with('orders',$allData);  
     }
 
+    //go to detailed view of order
     public function viewDetails($id){
         $order = Order::find($id);
         $ordeCode = $order -> orderCode;
         $foodList = order_item::whereIn('orderCode', [$ordeCode])->get();
+        //Names
+        $itemList = testItem::whereIn('id', $foodList)->get();
+        $x = 0;
+        $quan[0] = 0;
+        foreach($foodList as $cItem){
+            $quan[$x++] = $cItem -> quantity;
+        }
         
-        return view();
+        
+        
+
+        
+       return view('orderDetails')->with('orderData',$order)->with('itemList',$itemList) ->with('quan',$quan);
+      
+
+    }
+
+    public  function updateStatus(Request $request) {
+        $order = Order::find($request->oid);
+        $order->orderStatus = $request->orderStatus;
+        $order->save();
+        $allData = order::all();
+        return view('orderList') -> with('orders',$allData);  
+        
+
+
+    }
+
+    public function deleteOrder(Request $request){
+            
+            $id = $request->oid;
+            $order = Order::find($id);
+            $ordeCode = $order -> orderCode;
+            order_item::whereIn('orderCode', [$ordeCode])->delete();
+            $order->delete();
+            $allData = order::all();
+            return view('orderList') -> with('orders',$allData); 
 
     }
 

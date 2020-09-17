@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
 
@@ -11,11 +11,12 @@
   <title>Simple Sidebar - Start Bootstrap Template</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="css/simple-sidebar.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/order_mgmt.css">
+  <link href="/css/simple-sidebar.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/css/order_mgmt.css"> 
 
   <!-- font awsome icons-->
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
@@ -105,16 +106,16 @@
 
                 <div class="form-group">
                   
-                  <h4 style="font-family: fantasy;">Customer Name   : <span style="font-family: Georgia, 'Times New Roman', Times, serif;font-size:25px;">Tharindu Balasooriya</span> </h4>
+                  <h4 style="font-family: fantasy;">Customer Name   : <span style="font-family: Georgia, 'Times New Roman', Times, serif;font-size:25px;">{{$orderData->customerName}}</span> </h4>
                 </div>
       
                 <div class="form-group">
-                  <h4 style="font-family: fantasy;">Customer Mobile   : <span style="font-family: Georgia, 'Times New Roman', Times, serif;font-size:25px;">071 590 1757</span> </h4>
+                  <h4 style="font-family: fantasy;">Customer Mobile   : <span style="font-family: Georgia, 'Times New Roman', Times, serif;font-size:25px;">{{$orderData->customerMobile}}</span> </h4>
                 </div>
       
                 
                 <div class="form-group">
-                  <h4 style="font-family: fantasy;">Customer Email   : <span style="font-family: Georgia, 'Times New Roman', Times, serif;font-size:25px;">tharinduudana66@gmail.com</span> </h4>
+                  <h4 style="font-family: fantasy;">Customer Email   : <span style="font-family: Georgia, 'Times New Roman', Times, serif;font-size:25px;">{{$orderData->customerEmail}}</span> </h4>
                 </div>
               
              
@@ -122,16 +123,16 @@
                 <h3 class="orderDetailsH">Order Details</h3>
     
               <div class="form-group">
-                <h4 style="font-family: fantasy;">Order Code  : <span style="font-family: Georgia, 'Times New Roman', Times, serif;font-size:25px;">OR001</span> </h4>
+                <h4 style="font-family: fantasy;">Order Code  : <span style="font-family: Georgia, 'Times New Roman', Times, serif;font-size:25px;">{{$orderData->orderCode}}</span> </h4>
               </div>
               <div class="form-group">
-                <h4 style="font-family: fantasy;">Order Date  : <span style="font-family: Georgia, 'Times New Roman', Times, serif;font-size:25px;">2020/12/12</span> </h4>
+                <h4 style="font-family: fantasy;">Order Date  : <span style="font-family: Georgia, 'Times New Roman', Times, serif;font-size:25px;">{{$orderData->created_at}}</span> </h4>
               </div>
               <div class="form-group">
-                <h4 style="font-family: fantasy;">Order Type  : <span style="font-family: Georgia, 'Times New Roman', Times, serif;font-size:25px;">Take-away</span> </h4>
+                <h4 style="font-family: fantasy;">Order Type  : <span style="font-family: Georgia, 'Times New Roman', Times, serif;font-size:25px;">{{$orderData->orderType}}</span> </h4>
               </div>
               <div class="form-group">
-                <h4 style="font-family: fantasy;">Order status  : <span style="font-family: Georgia, 'Times New Roman', Times, serif;font-size:25px;">Pending</span> </h4>
+                <h4 style="font-family: fantasy;">Order status  : <span style="font-family: Georgia, 'Times New Roman', Times, serif;font-size:25px;">{{$orderData->orderStatus}}</span> </h4>
               </div>
 
               <h3 class="orderDetailsH" >Food List</h3>
@@ -139,29 +140,36 @@
                 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name" class="form-control">
     
                 <ul id="myUL" class="foodList" style="list-style: none;">
-    
-                  <li>
-                    <div class="d-flex justify-content-start">
-                      <label for="F01" style="height: 30px;margin-right: 30px;">Fride_Rice</label>
-                      <input type="number" class="form-control " id="F01" name="Fride Rice">
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex justify-content-start">
-                      <label for="F02" style="height: 30px;margin-right: 30px;">Koththu</label>
-                      <input type="number" class="form-control " id="F02" name="Fride Rice">
-                    </div>
-                  </li>
+                  @php
+                    $x = 0;
+                  @endphp
+
+                  @foreach($itemList as $item)
+
+                    <li>
+                        <div class="d-flex justify-content-start">
+                          <label for="{{$item->itemName}}" style="height: 25px;margin-right: 30px;"><h5>{{$item->ItemName}}</h5></label>
+                          <input type="number" class="form-control "  name="{{$item->ItemName}}" value="{{$quan[$x++]}}" disabled>
+                        </div>
+                    </li>
+                  @endforeach
+
+                 
+      
                   
                 </ul> 
               </div>
-                  <button class="btn btn-danger">Withdraw Order</button>
+                    <form action="/deleteOrder" method="post">
+                            {{csrf_field()}}
+                          <input type="number" value="{{$orderData->id}}" name="oid" hidden>
+                          <button class="btn btn-danger" type="submit">Withdraw Order</button>
+                    </form> 
+                  
                   <button class="btn btn-warning">Update Details</button>
-                  <button class="btn btn-warning">Change Status</button>
+                  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Change Status</button>
                   <button class="btn btn-primary">Pay Now</button>
-
-                                <!-- Modal -->
-                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <!-- Modal -->
+                          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                               <div class="modal-content">
                                 <div class="modal-header">
@@ -170,20 +178,22 @@
                                     <span aria-hidden="true">&times;</span>
                                   </button>
                                 </div>
-                                <form action="#" method="post">
-                                <div class="modal-body">
-                                    
-                                      <input type="radio" id="male" name="gender" value="male">
-                                      <label for="male">Male</label><br>
-                                      <input type="radio" id="female" name="gender" value="female">
-                                      <label for="female">Female</label><br>
-                                      <input type="radio" id="other" name="gender" value="other">
-                                      <label for="other">Other</label>
+                                <form action="/updateOrderStatus" method="post">
+                                {{csrf_field()}}
+                                <div class="modal-body bg-white text-dark">
+
+                                        <input type="number" value="{{$orderData->id}}" name="oid" hidden>
+                                      <input type="radio" id="PENDING" name="orderStatus" value="PENDING">
+                                      <label for="PENDING">PENDING</label><br>
+                                      <input type="radio" id="COMPLETED" name="orderStatus" value="COMPLETED">
+                                      <label for="COMPLETED">COMPLETED</label><br>
+                                      <input type="radio" id="PROCESSING" name="orderStatus" value="PROCESSING">
+                                      <label for="PROCESSING">PROCESSING</label><br>
 
                                    
                                   
                                 </div>
-                                <div class="modal-footer">
+                                <div class="modal-footer bg-white">
                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                   <button type="submit" class="btn btn-primary">Save changes</button>
                                 </div>
@@ -209,8 +219,8 @@
   <!-- /#wrapper -->
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Menu Toggle Script -->
   <script>
