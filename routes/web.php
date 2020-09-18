@@ -21,6 +21,19 @@ Route::get('/orders', function () {
     return view('order_managment');
 });
 
+Route::get('/register', function(){
+    return view('add-employee');
+});
+
+Route::get('/profile', function(){
+    return view('add-employee');
+});
+
+Route::get('/register', function(){
+    return view('add-employee');
+});
+
+
 Route::get('/addOrders', 'orderController@goToAdd');
 Route::get('/orderList', 'orderController@goToOrder');
 Route::get('/viewOrderDetails/{id}', 'orderController@viewDetails');
