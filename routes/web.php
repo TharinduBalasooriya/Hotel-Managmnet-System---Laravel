@@ -41,3 +41,24 @@ Route::get('/viewOrderDetails/{id}', 'orderController@viewDetails');
 Route::post('/addNewOrder','orderController@store');
 Route::post('/updateOrderStatus','orderController@updateStatus');
 Route::post('/deleteOrder','orderController@deleteOrder');
+
+Route::post('/addFoodItem','foodPriceController@store');
+
+Route::get('/priceList', function(){
+    return view('viewprice');
+});
+
+Route::get('/addPrice', function(){
+    return view('addprice');
+});
+
+Route::get('/addFoodItem', function(){
+    return view('foodsPriceForm');
+});
+
+Route::get('/priceInter', function(){
+    return view('priceinterface');
+});
+
+Route::get('/viewFoodList', 'foodPriceController@viewAll');
+Route::post('/deleteFood', 'foodPriceController@delete');

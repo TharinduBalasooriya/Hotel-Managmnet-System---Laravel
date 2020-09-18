@@ -87,49 +87,90 @@
 
 
       <!-- page contain starts from here-->
-      <div class="container">
-        <h1 class="text-info text-center ">Add New Meals Items</h1>
 
-        <form action="/addFoodItem" method="post"><!--form-->
-              {{csrf_field()}}
-          <div class="form-group">
-            <label for="exampleInputId">Item Code</label>
-            <input type="id" class="form-control" id="exampleInputId" aria-describedby="id" name="itemCode">
+      <div class="container mt-3	">
+        <h1 class="text-info text-center ">Welcome To Price Setting</h1>
+
+      
+          <div class="row">
+            <div class="col-sm-4" ><!--Set Price-->
+              <div class="card border" >
+                <div class="card-header  text-white" style="height: 150px;background: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));" >
+                  <div class="row">
+                    <div class="col-lg-4" style="text-align: left">
+                      <i class="fa fa-list fa-5x" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-lg-8" style="text-align:right">
+                        <h4>Add Price</h4>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="card-footer text-muted bg-light">
+                     <a href="/addFoodItem" class="card-link " style="color: rgb(242, 112, 156);">View Details</a>
+                    <a href="/addFoodItem" class="card-link " style="color: rgb(242, 112, 156);"> <i class="fa fa-arrow-circle-right" style="float: right"></i></a>
+                     
+                </div>
+              </div>
+            </div><!--End of Set Price-->
+    
+            <div class="col-sm-4" ><!--View Price-->
+              <div class="card border" >
+                <div class="card-header  text-white" style="height: 150px;background: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));" >
+                  <div class="row">
+                    <div class="col-lg-4" style="text-align: left">
+                      <i class="fa fa-list fa-5x" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-lg-8" style="text-align:right">
+                        <h4>View Items</h4>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="card-footer text-muted bg-light">
+                     <a href="/viewFoodList" class="card-link " style="color: rgb(242, 112, 156);">View Details</a>
+                    <a href="/viewFoodList" class="card-link " style="color: rgb(242, 112, 156);"> <i class="fa fa-arrow-circle-right" style="float: right"></i></a>
+                     
+                </div>
+              </div>
+            </div><!--End of View Price-->
+
+            <div class="col-sm-4" ><!--Reports-->
+              <div class="card border" >
+                <div class="card-header  text-white" style="height: 150px;background: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));" >
+                  <div class="row">
+                    <div class="col-lg-4" style="text-align: left">
+                      <i class="fa fa-list fa-5x" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-lg-8" style="text-align:right">
+                        <h4>Reports</h4>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="card-footer text-muted bg-light">
+                     <a href="#" class="card-link " style="color: rgb(242, 112, 156);">View Details</a>
+                    <a href="#" class="card-link " style="color: rgb(242, 112, 156);"> <i class="fa fa-arrow-circle-right" style="float: right"></i></a>
+                     
+                </div>
+              </div>
+            </div><!--End of Reports-->
+    
             
-          </div>
-          <div class="form-group">
-            <label for="exampleInputName">Name</label>
-            <input type="name" class="form-control" id="exampleInputName" name="itemName">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPrice">Price</label>
-            <input type="price" class="form-control" id="exampleInputPrice" aria-describedby="nprice" name="price">
-            <small id="pricelHelp" class="form-text text-muted">LKR.</small>
-          </div>
-          
-          <button type="submit" class="btn btn-primary">Submit</button>
-          <button type="submit" class="btn btn-warning">Reset</button>
-          <br>
-          <button type="submit" class="btn btn-danger mt-3  ">I am done and Exit</button>
-        </form><br><!--End of form-->
-
-        <div class="row"><!--image-->
-          <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-2">
-            
-            <img src="C:\Users\Hp\Desktop\Bootstarp\test\images.jfif" class="img-fluid" alt="">
-            </div><!--End of Back To image-->
-        </div>
-          
-
-      </div>
+            </div><!--image-->
+            <div class="row">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-2">
+                
+                <img src="C:\Users\Hp\Desktop\Bootstarp\test\price.jfif" class="img-fluid" alt="">
+                <p class="text-center">Good Mornng Mr.Admin! It's Time To Add New Prices...!</p>
+                </div><!--End of Back To image-->
+            </div>
+            <button type="submit" class="btn btn-danger mt-3  "> Exit</button>
       
-       
+      
       
 
-     
-      
-      
-     </div>
+
     </div>
     <!-- /#page-content-wrapper -->
 

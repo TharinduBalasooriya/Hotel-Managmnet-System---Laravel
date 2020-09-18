@@ -98,7 +98,27 @@
               <th>Price (LKR)</th>
               <th>Edit1</th>
               <th>Edit2</th>
-
+              @foreach($items ?? '' as $f)
+              <tr>
+                <td>{{$f->ItemCode}}</td>
+                <td>{{$f->ItemName}}</td>
+                <td>{{$f->ItemPrice}}</td>
+                <td><button type="submit" class="btn btn-primary">Update</button></td>
+                  <form action="/deleteFood" method="post"></form>
+                <td>
+                <form action="/deleteFood" method="post">
+                      {{csrf_field()}}
+                    <input type="number" name="id" value="{{$f->id}}"hidden>
+                    <button type="submit" class="btn btn-warning">Delete</button>
+                </form>
+                </td>
+  
+              </tr>
+                
+              @endforeach
+              
+            
+              
               <tr>
                 <td>K1</td>
                 <td>Kotthu</td>
