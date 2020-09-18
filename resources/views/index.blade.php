@@ -77,7 +77,10 @@
                 <a class="dropdown-item" href="#">Action</a>
                 <a class="dropdown-item" href="#">Another action</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <form action="uLogout" method="post">
+                    <a class="dropdown-item" href="/uLogout">Log Out</a>
+                </form>
+                
               </div>
             </li>
           </ul>
@@ -110,8 +113,8 @@
                 </div>
               </div>
               <div class="card-footer text-muted bg-light">
-                   <a href="#" class="card-link">View Details</a>
-                  <a href="#" class="card-link"> <i class="fa fa-arrow-circle-right" style="float: right"></i></a>
+                   <a href="/staffIndex" class="card-link">View Details</a>
+                  <a href="/staffIndex" class="card-link"> <i class="fa fa-arrow-circle-right" style="float: right"></i></a>
                    
               </div>
             </div>

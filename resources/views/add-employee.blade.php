@@ -75,7 +75,7 @@
                 <a class="dropdown-item" href="#">Action</a>
                 <a class="dropdown-item" href="#">Another action</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="/uLogout">Log Out</a>
               </div>
             </li>
           </ul>
@@ -86,7 +86,8 @@
 
       <!-- page contain starts from here-->
 
-      <form action="action_page.php">
+      <form action="/storeEmployee" method="post">
+            {{csrf_field()}}
         <div class="container">
           <h1>Register</h1>
           <p>Please fill in this form to create an account.</p>
@@ -117,12 +118,23 @@
           <input type="radio" name="MartialStatus" value="Divorced"> Divorced<br>
           <input type="radio" name="MartialStatus" value="Prefernottoanswer"> Prefer not to answer<br><br>
 
+
+             <label for="Martial Status"><b>Job Role</b></label><br>
+
+                <input type="radio" name="jobRole" value="KM"> Kitchen Manager<br>
+                <input type="radio" name="jobRole" value="RM"> Resturant Manager<br>
+                <input type="radio" name="jobRole" value="GM"> General Manager<br>
+                <input type="radio" name="jobRole" value="SM"> Staff Manager<br>
+               
+
           <label for="Date Of Birth"><b>Date Of Birth</b></label>
           <input type="date" placeholder="Date Of Birth" name="DateOfBirth" id="DateOfBirth" required><br><br>
           
           <label for="Join Date"><b>Join Date</b></label>
           <input type="date" placeholder="Join Date" name="JoinDate" id="JoinDate" required> <br><br>
 
+          <label for="userName"><b>User Name</b></label>
+          <input type="text" placeholder="Password" name="uN" id="userName" required> 
           <label for="psw"><b>Password</b></label>
           <input type="password" placeholder="Password" name="psw" id="psw" required> 
 

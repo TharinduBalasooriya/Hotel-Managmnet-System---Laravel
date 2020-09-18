@@ -14,7 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('userLogin');
+});
+
+Route::get('/login', function () {
+    return view('userLogin');
 });
 
 Route::get('/orders', function () {
@@ -41,6 +45,9 @@ Route::get('/viewOrderDetails/{id}', 'orderController@viewDetails');
 Route::post('/addNewOrder','orderController@store');
 Route::post('/updateOrderStatus','orderController@updateStatus');
 Route::post('/deleteOrder','orderController@deleteOrder');
+Route::post('/getOrder','orderController@findOrder');
+Route::post('/updateOrder','orderController@updateOrder');
+
 
 Route::post('/addFoodItem','foodPriceController@store');
 
@@ -62,3 +69,16 @@ Route::get('/priceInter', function(){
 
 Route::get('/viewFoodList', 'foodPriceController@viewAll');
 Route::post('/deleteFood', 'foodPriceController@delete');
+
+Route::get('/staffIndex', function(){
+    return view('staffindex');
+});
+
+Route::get('/addEmployee', function(){
+    return view('add-employee');
+});
+
+Route::post('/storeEmployee', 'employeeContoller@store');
+Route::post('/uLogin', 'employeeContoller@login');
+
+Route::get('/uLogout','employeeContoller@logout');

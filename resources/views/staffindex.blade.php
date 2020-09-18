@@ -87,52 +87,94 @@
 
 
       <!-- page contain starts from here-->
-      <div class="container"><!--Banquet Hall-->
-        <h1 class="text-info text-center ">Add Banquet Hall Packages Details</h1>
+      <div class="container-fluid">
+          <h1 class="mt-4">Dashboard</h1>
+         <!-- uses regular style -->
+         
+        
+        
 
-        <form><!--form-->
-          <div class="form-group">
-            <label for="exampleInputId">ID</label>
-            <input type="id" class="form-control" id="exampleInputId" aria-describedby="id">
-            
+        <div class="row">
+          <!-- 1st item-->
+          <div class="col-sm-4" >
+            <div class="card border">
+              <div class="card-header  text-white " style="height: 150px;background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(63,103,217,1) 0%, rgba(67,209,222,1) 100.3% );" >
+                <div class="row">
+                  <div class="col-lg-4" style="text-align: left">
+                      <i class="fa fa-users fa-5x" aria-hidden="true"></i>
+                  </div>
+                  <div class="col-lg-8" style="text-align:right">
+                      <h4>Staff Registration</h4>
+                  </div>
+                  
+                </div>
+              </div>
+              <div class="card-footer text-muted bg-light">
+                   <a href="/addEmployee" class="card-link">View Details</a>
+                  <a href="/addEmployee" class="card-link"> <i class="fa fa-arrow-circle-right" style="float: right"></i></a>
+                   
+              </div>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="exampleInputPT">Package Type</label>
-            <input type="pt" class="form-control" id="exampleInputPT" aria-describedby="pt">
-            <small id="pthelp" class="form-text text-muted">Small/Medium/Large</small>
-            
+          <!-- second item -->
+         
+             <div class="col-sm-4" >
+            <div class="card border" >
+              <div class="card-header  text-white" style="height: 150px;background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(63,103,217,1) 0%, rgba(67,209,222,1) 100.3% );" >
+                <div class="row">
+                  <div class="col-lg-4" style="text-align: left">
+                    <i class="fa fa-user fa-5x" aria-hidden="true"></i>
+                  </div>
+                  <div class="col-lg-8" style="text-align:right">
+                      <h4>Staff Profile</h4>
+                  </div>
+                  
+                </div>
+              </div>
+              <div class="card-footer text-muted bg-light">
+                   <a href="#" class="card-link " style="color: rgb(242, 112, 156);">View Details</a>
+                  <a href="#" class="card-link " style="color: rgb(242, 112, 156);"> <i class="fa fa-arrow-circle-right" style="float: right"></i></a>
+                   
+              </div>
+            </div>
           </div>
-          
-          <div class="form-group">
-            <label for="exampleInputName">Hall Name</label>
-            <input type="name" class="form-control" id="exampleInputName" aria-describedby="nName">
-            <small id="name" class="form-text text-muted">Golden/Platinum/Christal</small>
+         <!-- Third item-->
             
+            <div class="col-sm-4" >
+            <div class="card border" >
+              <div class="card-header  text-white" style="height: 150px;background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(63,103,217,1) 0%, rgba(67,209,222,1) 100.3% );" >
+                <div class="row">
+                  <div class="col-lg-4" style="text-align: left">
+                    <i class="fa fa-money fa-5x" aria-hidden="true"></i>
+                  </div>
+                  <div class="col-lg-8" style="text-align:right">
+                      <h4>Staff Payroll</h4>
+                  </div>
+                  
+                </div>
+              </div>
+              <div class="card-footer text-muted bg-light">
+                   <a href="#" class="card-link " style="color: rgba(165,41,185,1);">View Details</a>
+                  <a href="#" class="card-link " style="color: rgba(165,41,185,1);"> <i class="fa fa-arrow-circle-right" style="float: right"></i></a>
+                   
+              </div>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="examplecpr">Charge Per Day</label>
-            <input type="perday" class="form-control" id="examplecpr">
-          </div>
-          
-          <button type="submit" class="btn btn-primary">Submit</button>
-          <button type="submit" class="btn btn-warning">Reset</button>
-          <br>
-          <button type="submit" class="btn btn-danger mt-3  ">I am done and Exit</button>
-        </form><br><!--End of form-->
-
-        <div class="row"><!--image-->
-          <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-2">
             
-            <img src="C:\Users\Hp\Desktop\Bootstarp\test\download (1).jfif" class="img-fluid" alt="">
-            </div><!--End of image-->
-
+        
         </div>
+
+
+        
+          
+            </div>
+          </div>
           
 
-      </div><!--End of Banquet Hall-->
-
-
-
+         <!--item list finish -->
+        </div>
+        
+      </div>
     </div>
     <!-- /#page-content-wrapper -->
 

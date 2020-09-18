@@ -15,10 +15,12 @@
 
   <!-- Custom styles for this template -->
   <link href="css/simple-sidebar.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/order_mgmt.css">
 
   <!-- font awsome icons-->
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--food list js-->
 
 </head>
 
@@ -87,52 +89,93 @@
 
 
       <!-- page contain starts from here-->
-      <div class="container"><!--Banquet Hall-->
-        <h1 class="text-info text-center ">Add Banquet Hall Packages Details</h1>
 
-        <form><!--form-->
-          <div class="form-group">
-            <label for="exampleInputId">ID</label>
-            <input type="id" class="form-control" id="exampleInputId" aria-describedby="id">
-            
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPT">Package Type</label>
-            <input type="pt" class="form-control" id="exampleInputPT" aria-describedby="pt">
-            <small id="pthelp" class="form-text text-muted">Small/Medium/Large</small>
-            
-          </div>
+        <h1 style="text-align: center;margin-top: 10px;">Update Orders</h1>
+
+        <!--FORM STARTS HERE-->
+        <form action="/updateOrder" method="POST" class="formDesign">
+                {{csrf_field()}}
+            <div class="row ">
+              <div class="col-sm-4 orderFormSide">
+
+              </div>
+              <div class="col-sm-8 orderFormRSide ">
+                <h3 class="orderDetailsH">Customer Details</h3>
+
+
+                <div class="form-group">
+                  <label for="customerName">Customer Name </label>
+                  <input type="text" class="form-control" name="customerName" placeholder="name" value="{{$orderData->customerName}}" required>
+                </div>
+      
+                <div class="form-group">
+                  <label for="customerMobile">Customer Mobile Number </label>
+                  <input type="number" class="form-control" name="customerMobile" placeholder="07X -XXX-XX-XX" value="{{$orderData->customerMobile}}" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="customerMobile">Customer Mobile Email </label>
+                  <input type="email" class="form-control" name="customerEmail" placeholder="tharinduudana66@gmail.com" value="{{$orderData->customerEmail}}" >
+                </div>
+      
+                <br/>
+                <h3 class="orderDetailsH">Order Details</h3>
+    
+              <div class="form-group">
+                <label for="orderID">Order Code</label>
+                <input type="text" class="form-control" id="orderID" placeholder="OR001" name="orderCode" value="{{$orderData->orderCode}}">
+                <input type="number" value="{{$orderData->id}}" name="oid" hidden>
+              </div>
+              <div class="form-group">
+                <span>Select Order Type</span>
+
+                <div class="form-check">
+                  <label class="form-check-label" for="radio1">
+                    <input type="radio" class="form-check-input" id="radio1" name="orderType" value="take-away" checked> Take-Away
+                  </label> <br/>
+                  <label class="form-check-label" for="radio1">
+                    <input type="radio" class="form-check-input" id="radio1" name="orderType" value="dine-in" > Dine-in
+                  </label>
+                </div>
+              </div>
+
+              <h3 class ="orderDetailsH">Select Foods</h3>
+              <div class="form-group ">
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name" class="form-control">
+    
+                <ul id="myUL" class="foodList" style="list-style: none;">
+    
+                    @foreach($itemList as $item)
+
+                      @if($item -> orderCode == $oc)
+                        <li>
+                        <div class="d-flex justify-content-start">
+                          <label for="F01" style="height: 30px;margin-right: 30px;">{{$item->ItemName}}</label>
+                          <input type="hidden" class="form-control " id="F01" name="fid[]" value="{{$item ->id}}">
+                          <input type="number" class="form-control " id="F01" name="qty[]" value="{{$item ->quantity}}">
+                          <input type="hidden" class="form-control " id="F01" name="name[]" value="{{$item ->ItemName}}">
+                        </div>
+                      </li>
+                      @endif
+
+                    @endforeach
+                  
+                </ul> 
+              </div>
+                
+                    <div class="form-group" style="display: flex;justify-content: center;" >
+                        <button type="submit" class="btn btn-warning">Update Now</button>
+                    </div>
+                
+                
+              </div>
+            </div>
+           
+
+
           
-          <div class="form-group">
-            <label for="exampleInputName">Hall Name</label>
-            <input type="name" class="form-control" id="exampleInputName" aria-describedby="nName">
-            <small id="name" class="form-text text-muted">Golden/Platinum/Christal</small>
-            
-          </div>
-          <div class="form-group">
-            <label for="examplecpr">Charge Per Day</label>
-            <input type="perday" class="form-control" id="examplecpr">
-          </div>
-          
-          <button type="submit" class="btn btn-primary">Submit</button>
-          <button type="submit" class="btn btn-warning">Reset</button>
-          <br>
-          <button type="submit" class="btn btn-danger mt-3  ">I am done and Exit</button>
-        </form><br><!--End of form-->
-
-        <div class="row"><!--image-->
-          <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-2">
-            
-            <img src="C:\Users\Hp\Desktop\Bootstarp\test\download (1).jfif" class="img-fluid" alt="">
-            </div><!--End of image-->
-
-        </div>
-          
-
-      </div><!--End of Banquet Hall-->
-
-
-
+        </form>
+        <!--FORM ENDS HERE-->
     </div>
     <!-- /#page-content-wrapper -->
 
@@ -149,6 +192,25 @@
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
+
+    function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("label")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+
+
   </script>
 
 </body>

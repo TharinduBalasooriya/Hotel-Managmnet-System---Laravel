@@ -80,7 +80,7 @@
                 <a class="dropdown-item" href="#">Action</a>
                 <a class="dropdown-item" href="#">Another action</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="/uLogout">Log Out</a>
               </div>
             </li>
           </ul>
@@ -146,12 +146,16 @@
 
                   @foreach($itemList as $item)
 
-                    <li>
-                        <div class="d-flex justify-content-start">
-                          <label for="{{$item->itemName}}" style="height: 25px;margin-right: 30px;"><h5>{{$item->ItemName}}</h5></label>
-                          <input type="number" class="form-control "  name="{{$item->ItemName}}" value="{{$quan[$x++]}}" disabled>
-                        </div>
-                    </li>
+                     @if($item -> orderCode == $oc)
+                      <li>
+                          <div class="d-flex justify-content-start">
+                            <label for="{{$item->itemName}}" style="height: 25px;margin-right: 30px;"><h5>{{$item->ItemName}}</h5></label>
+                            <input type="number" class="form-control "  name="{{$item->ItemName}}" value="{{$item->quantity}}" disabled>
+                          </div>
+                       </li>
+                     @endif
+
+                    
                   @endforeach
 
                  
@@ -159,15 +163,47 @@
                   
                 </ul> 
               </div>
-                    <form action="/deleteOrder" method="post">
-                            {{csrf_field()}}
-                          <input type="number" value="{{$orderData->id}}" name="oid" hidden>
-                          <button class="btn btn-danger" type="submit">Withdraw Order</button>
-                    </form> 
+                  @php
+                        $value = session('jobRole', 'GM');
+                        $stat = $orderData->orderStatus;
+                  @endphp
+                  @if($value == "RM")
+                        <form action="/deleteOrder" method="post">
+                                  {{csrf_field()}}
+                                <input type="number" value="{{$orderData->id}}" name="oid" hidden>
+                                <div class="form-group" style="display: flex;justify-content: center;" >
+                                      <button class="btn btn-danger" type="submit">Withdraw Order</button>
+                                </div>
+                          </form>
+                          <form action="/getOrder" method="post">
+                                {{csrf_field()}}
+                              <input type="number" value="{{$orderData->id}}" name="oid" hidden>
+                              <div class="form-group" style="display: flex;justify-content: center;" >
+                                  <button class="btn btn-warning">Update Details</button>
+                               </div>
+                           </form> 
+                           @if($stat == "COMPLETED")
+                           <div class="form-group" style="display: flex;justify-content: center;" >
+                              <button class="btn btn-primary">Pay Now</button>
+                           </div>
+                           <form action="/deleteOrder" method="post">
+                                  {{csrf_field()}}
+                                <input type="number" value="{{$orderData->id}}" name="oid" hidden>
+                                <div class="form-group" style="display: flex;justify-content: center;" >
+                                      <button class="btn btn-danger" type="submit">Remove Order</button>
+                                </div>
+                             </form>
+
+                           @endif
+                    
+                  @elseif($value == "KM" )
+                    <div class="form-group" style="display: flex;justify-content: center;" >
+                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Change Status</button>
+                    </div>
+                  @endif
+                    
                   
-                  <button class="btn btn-warning">Update Details</button>
-                  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Change Status</button>
-                  <button class="btn btn-primary">Pay Now</button>
+                  
                   <!-- Modal -->
                           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">

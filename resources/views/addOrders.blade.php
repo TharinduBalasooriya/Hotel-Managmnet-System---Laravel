@@ -79,7 +79,7 @@
                 <a class="dropdown-item" href="#">Action</a>
                 <a class="dropdown-item" href="#">Another action</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="/uLogout">Log Out</a>
               </div>
             </li>
           </ul>
@@ -150,6 +150,7 @@
                           <label for="F01" style="height: 30px;margin-right: 30px;">{{$item->ItemName}}</label>
                           <input type="hidden" class="form-control " id="F01" name="fid[]" value="{{$item ->id}}">
                           <input type="number" class="form-control " id="F01" name="qty[]">
+                          <input type="hidden" class="form-control " id="F01" name="name[]" value="{{$item ->ItemName}}">
                         </div>
                       </li>
 
