@@ -137,6 +137,8 @@
           <input type="text" placeholder="Password" name="uN" id="userName" required> 
           <label for="psw"><b>Password</b></label>
           <input type="password" placeholder="Password" name="psw" id="psw" required> 
+          <label for="mobile"><b>mobileNumber</b></label>
+          <input type="number" placeholder="mobileNumber" name="mobile" id="mobile" required> 
 
           <label for="Address"><b>Address</b></label>
           <input type="text" placeholder="Address" name="Address" id="Address" required class="textbox">

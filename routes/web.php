@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('userLogin');
 });
 
+Route::get('/home', function () {
+    return view('index');
+});
 Route::get('/login', function () {
     return view('userLogin');
 });
@@ -69,6 +72,8 @@ Route::get('/priceInter', function(){
 
 Route::get('/viewFoodList', 'foodPriceController@viewAll');
 Route::post('/deleteFood', 'foodPriceController@delete');
+Route::post('/viewFood', 'foodPriceController@view');
+Route::post('/updateFoodItem', 'foodPriceController@update');
 
 Route::get('/staffIndex', function(){
     return view('staffindex');
@@ -82,3 +87,6 @@ Route::post('/storeEmployee', 'employeeContoller@store');
 Route::post('/uLogin', 'employeeContoller@login');
 
 Route::get('/uLogout','employeeContoller@logout');
+Route::get('/getUser','employeeContoller@getUserDetails');
+Route::post('/updateUser','employeeContoller@updateUser');
+Route::post('/deleteUser','employeeContoller@deleteUser');

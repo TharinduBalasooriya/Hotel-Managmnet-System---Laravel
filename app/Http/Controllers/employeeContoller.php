@@ -22,6 +22,8 @@ class employeeContoller extends Controller
         $user->password = $request ->psw;
         $user->bankName = $request ->BankName;
         $user->accountNumber = $request ->AccountNumber;
+        $user->address = $request ->Address;
+        $user->mobile = $request->mobile;
 
       
         
@@ -62,5 +64,43 @@ class employeeContoller extends Controller
         $request->session()->regenerate();
         return view('userLogin');
         
+    }
+
+    public function getUserDetails(Request $request){
+
+        $id = session('userID', 'GM');
+        $allData =  user_details::find($id);
+
+        return view('employee-profile')->with('user',$allData);
+    }
+
+    public function updateUser(Request $request){
+
+        $userId = $request->id;
+        $user =  user_details::find($userId);
+
+        
+        $user->NIC = $request->NICNumber;
+        $user->firstName = $request ->FirstName;
+        
+      
+    
+        $user->password = $request ->psw;
+        $user->bankName = $request ->BankName;
+        $user->accountNumber = $request ->AccountNumber;
+        $user->address = $request ->Address;
+        $user->mobile = $request->MobileNumber;
+
+        $user->save();
+        return redirect()->action('employeeContoller@getUserDetails');
+    }
+
+    public function deleteUser(Request $request){
+        $userId = $request->id;
+        $user =  user_details::find($userId);
+        $user->delete();
+        return redirect()->action('employeeContoller@logout');
+
+
     }
 }

@@ -40,5 +40,31 @@ class foodPriceController extends Controller
         return view('foodPriceTable') -> with('items',$allData);
        
 
+    }   
+
+    public function view(Request $request){
+        $item  = testItem::find($request ->id);
+        
+        
+        return view('foodsPriceUpdate')->with('foodData',$item);
+        
+        
+       
+
     }
+    
+    public function update(Request $request){
+        $item  = testItem::find($request ->id);
+        $item ->ItemCode =  $request->itemCode;
+        $item ->ItemName =  $request->itemName;
+        $item ->ItemPrice =  $request->price;
+        
+        $item ->save();
+        return redirect()->action('foodPriceController@viewAll');
+        
+       
+
+    } 
+
+    
 }

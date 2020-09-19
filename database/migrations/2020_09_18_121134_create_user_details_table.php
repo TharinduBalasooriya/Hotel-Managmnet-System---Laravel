@@ -26,6 +26,8 @@ class CreateUserDetailsTable extends Migration
             $table->string('password');
             $table->string('bankName');
             $table->integer('accountNumber');
+            $table->integer('mobile');
+            $table->string('address');
             $table->timestamps();
         });
     }

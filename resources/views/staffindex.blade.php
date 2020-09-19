@@ -132,7 +132,7 @@
                 </div>
               </div>
               <div class="card-footer text-muted bg-light">
-                   <a href="#" class="card-link " style="color: rgb(242, 112, 156);">View Details</a>
+                   <a href="/getUser" class="card-link " style="color: rgb(242, 112, 156);">View Details</a>
                   <a href="#" class="card-link " style="color: rgb(242, 112, 156);"> <i class="fa fa-arrow-circle-right" style="float: right"></i></a>
                    
               </div>

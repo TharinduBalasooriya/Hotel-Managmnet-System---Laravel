@@ -87,96 +87,50 @@
 
 
       <!-- page contain starts from here-->
-
       <div class="container">
-        <h1 class="text-info text-center">Foods & Bevarages Price Table</h1>
-        <div class="row">
-          <div class="col-md-12">
-            <table class="table table-dark">
-              <th>ID</th>
-              <th>Name</th>
-              <th>Price (LKR)</th>
-              <th>Edit1</th>
-              <th>Edit2</th>
-              @foreach($items ?? '' as $f)
-              <tr>
-                <td>{{$f->ItemCode}}</td>
-                <td>{{$f->ItemName}}</td>
-                <td>{{$f->ItemPrice}}</td>
-                <td>
-                <form action="/viewFood" method="post">
-                      {{csrf_field()}}
-                    <input type="number" name="id" value="{{$f->id}}"hidden>
-                    <button type="submit" class="btn btn-primary">Update</button>
-                </form>
-                </td>
-                <td>
-                <form action="/deleteFood" method="post">
-                      {{csrf_field()}}
-                    <input type="number" name="id" value="{{$f->id}}"hidden>
-                    <button type="submit" class="btn btn-warning">Delete</button>
-                </form>
-                </td>
-  
-              </tr>
-                
-              @endforeach
+        <h1 class="text-info text-center ">Update Meals Details</h1>
 
-              
-              
+        <form action="/updateFoodItem" method="post"><!--form-->
+              {{csrf_field()}}
+          <div class="form-group">
+            <label for="exampleInputId">Item Code</label>
+            <input type="id" class="form-control" id="exampleInputId" aria-describedby="id" name="itemCode" value="{{$foodData->ItemCode}}">
+            <input type="hidden" class="form-control" id="exampleInputId" aria-describedby="id" name="id" value="{{$foodData->id}}">
             
-              
-              <tr>
-                <td>K1</td>
-                <td>Kotthu</td>
-                <td>450.00</td>
-                <td><button type="submit" class="btn btn-primary">Update</button></td>
-                <td><button type="submit" class="btn btn-warning">Delete</button></td>
-  
-              </tr>
-              <tr>
-                <td>N1</td>
-                <td>Noodles</td>
-                <td>280.00</td>
-                <td><button type="submit" class="btn btn-primary">Update</button></td>
-                <td><button type="submit" class="btn btn-warning">Delete</button></td>
-  
-              </tr>
-              <tr>
-                <td>F1</td>
-                <td>Fride Rice</td>
-                <td>500.00</td>
-                <td><button type="submit" class="btn btn-primary">Update</button></td>
-                <td><button type="submit" class="btn btn-warning">Delete</button></td>
-  
-              </tr>
-              <tr>
-                <td>D1</td>
-                <td>Hot Chocolate</td>
-                <td>180.00</td>
-                <td><button type="submit" class="btn btn-primary">Update</button></td>
-                <td><button type="submit" class="btn btn-warning">Delete</button></td>
-  
-              </tr>
-              <tr>
-                <td>A1</td>
-                <td>Fruits Salad</td>
-                <td>200.00</td>
-                <td><button type="submit" class="btn btn-primary">Update</button></td>
-                <td><button type="submit" class="btn btn-warning">Delete</button></td>
-  
-              </tr>
-            </table>
-
           </div>
-         
+          <div class="form-group">
+            <label for="exampleInputName">Name</label>
+            <input type="name" class="form-control" id="exampleInputName" name="itemName" value="{{$foodData->ItemName}}">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPrice">Price</label>
+            <input type="price" class="form-control" id="exampleInputPrice" aria-describedby="nprice" name="price" value="{{$foodData->ItemPrice}}">
+            <small id="pricelHelp" class="form-text text-muted">LKR.</small>
+          </div>
+          
+          <button type="submit" class="btn btn-primary">UPDATE NOW</button>
+          <button type="submit" class="btn btn-warning">Reset</button>
+          <br>
+          <button type="submit" class="btn btn-danger mt-3  ">I am done and Exit</button>
+        </form><br><!--End of form-->
 
+        <div class="row"><!--image-->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-2">
+            
+            <img src="C:\Users\Hp\Desktop\Bootstarp\test\images.jfif" class="img-fluid" alt="">
+            </div><!--End of Back To image-->
         </div>
-        <button type="submit" class="btn btn-danger mt-3  ">I'm Done and Exit</button>
+          
 
       </div>
+      
+       
+      
 
-
+     
+      
+      
+     </div>
     </div>
     <!-- /#page-content-wrapper -->
 

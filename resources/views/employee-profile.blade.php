@@ -82,67 +82,75 @@
         </div>
       </nav>
 
+       
 
 
       <!-- page contain starts from here-->
 
-     <form action="action_page.php">
-      <div class="img"> 
+     <form action="updateUser" method="post">
+           @csrf
+      <div > 
         
-        <img src="getImage.php?id=1" width="250" height="300" /> <br>
+        
         <label class="pro" for="NIC Number"><b>NIC Number</b></label><br>
-        <input type="text" placeholder="NIC Number" name="NICNumber" id="NICNumber" required><br>
-        <button type="submit" class="registerbtn1">Add</button>
+        <input type="text" placeholder="NIC Number" name="NICNumber" id="NICNumber" value="{{$user->NIC}}"required><br>
+        <input type="hidden" placeholder="NIC Number" name="id" id="NICNumber" value="{{$user->id}}"><br>
+       
 
       
       </div>
 
         <div class="container">
-          <h1>Employee Name</h1>
+          <h1>{{$user->firstName}}</h1>
 
           
           
 
           <h3>Contact Informations</h3>
           <label for="Mobile Number"><b>Mobile Number</b></label><br>
-          <input type="number" placeholder="Mobile Number" name="MobileNumber" id="MobileNumber" required><br>
+          <input type="number" placeholder="Mobile Number" name="MobileNumber" id="MobileNumber" value="{{$user->mobile}}" required><br>
 
-          <label for="Home Number"><b>Home Number</b></label><br>
-          <input type="number" placeholder="Home Number" name="HomeNumber" id="HomeNumber" required><br><br>
+          
 
           <h3>General Informations</h3>
           <label for="First Name"><b>First Name</b></label><br>
-          <input type="text" placeholder="First Name" name="FirstName" id="FirstName" required><br>
+          <input type="text" placeholder="First Name" name="FirstName" id="FirstName" value="{{$user->firstName}}" required ><br>
 
           <label for="Department"><b>Department</b></label><br>
-          <input type="text" placeholder="Department" name="Department" id="Department" required><br>
+          <input type="text" placeholder="Department" name="Department" id="Department" value="{{$user->jobRole}}" required><br>
           
           <label for="Martial Status"><b>Martial Status</b></label><br>
 
-          <input type="radio" name="MartialStatus" value="Single"> Single<br>
-          <input type="radio" name="MartialStatus" value="Married"> Married<br>
-          <input type="radio" name="MartialStatus" value="Separated"> Separated<br>
-          <input type="radio" name="MartialStatus" value="Divorced"> Divorced<br>
-          <input type="radio" name="MartialStatus" value="Prefernottoanswer"> Prefer not to answer<br><br>
+          <input type="radio" name="MartialStatus" value="Single" > Single<br>
+          <input type="radio" name="MartialStatus" value="Married" > Married<br>
+          <input type="radio" name="MartialStatus" value="Separated" > Separated<br>
+          <input type="radio" name="MartialStatus" value="Divorced" > Divorced<br>
+          <input type="radio" name="MartialStatus" value="Prefernottoanswer" > Prefer not to answer<br><br>
 
           <label for="psw"><b>Password</b></label><br> 
-          <input type="password" placeholder="Password" name="psw" id="psw" required><br> 
+          <input type="password" placeholder="Password" name="psw" id="psw" value="{{$user->password}}" required><br> 
 
           <label for="Address"><b>Address</b></label><br> 
-          <input type="text" placeholder="Address" name="Address" id="Address" required class="textbox"><br> 
+          <input type="text" placeholder="Address" name="Address" id="Address" value="{{$user->address}}" required class="textbox"><br> 
 
           <label for="Bank Name"><b>Bank Name</b></label><br> 
-          <input type="text" placeholder="Bank Name" name="BankName" id="BankName" required><br> 
+          <input type="text" placeholder="Bank Name" name="BankName" id="BankName" value="{{$user->bankName}}" required><br> 
 
           <label for="Account Number"><b>Account Number</b></label><br> 
-          <input type="text" placeholder="Account Number" name="AccountNumber" id="AccountNumber" required><br> 
+          <input type="text" placeholder="Account Number" name="AccountNumber" id="AccountNumber" value="{{$user->accountNumber}}" required><br> 
 
         
           <button type="submit" class="registerbtn2">update</button> 
-          <button type="submit" class="registerbtn3">Delete</button>
+          
         </div>
       
     
+      </form>
+
+      <form action="/deleteUser" method="post">
+            @csrf
+              <input type="hidden" placeholder="NIC Number" name="id" id="NICNumber" value="{{$user->id}}"><br>
+              <button type="submit" class="registerbtn3">Delete</button>
       </form>
     </div>
     <!-- /#page-content-wrapper -->
