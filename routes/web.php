@@ -50,6 +50,7 @@ Route::post('/updateOrderStatus','orderController@updateStatus');
 Route::post('/deleteOrder','orderController@deleteOrder');
 Route::post('/getOrder','orderController@findOrder');
 Route::post('/updateOrder','orderController@updateOrder');
+Route::post('/goToFoodBill','orderController@bill');
 
 
 Route::post('/addFoodItem','foodPriceController@store');

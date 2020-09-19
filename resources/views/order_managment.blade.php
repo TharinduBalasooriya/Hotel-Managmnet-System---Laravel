@@ -96,7 +96,7 @@
           <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
             <div class="card-header text-center">Completed Orders</div>
             <div class="card-body">
-              <h1 style="text-align: center;">34</h1>
+              <h1 style="text-align: center;">8</h1>
               
             </div>
           </div>
@@ -109,7 +109,7 @@
           <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
             <div class="card-header text-center">Processing Orders</div>
             <div class="card-body">
-              <h1 style="text-align: center;">34</h1>
+              <h1 style="text-align: center;">4</h1>
               
             </div>
           </div>
@@ -122,7 +122,7 @@
           <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
             <div class="card-header text-center">Pending Orders</div>
             <div class="card-body">
-              <h1 style="text-align: center;">34</h1>
+              <h1 style="text-align: center;">7</h1>
               
             </div>
           </div>
@@ -140,7 +140,7 @@
           background-image: linear-gradient(316deg, #6c33a3 0%, #8241b8 74%);">
             <div class="card-body">
               <i class="fa fa-plus-circle fa-5x mt-3" aria-hidden="true"></i>
-              <a href="addOrders"><h3 >Add New Orders</h3></a>
+              <a href="addOrders" class="text-white"><h3 >Add New Orders</h3></a>
             </div>
             
           </div>
@@ -153,7 +153,7 @@
           ">
             <div class="card-body">
               <i class="fa fa-list fa-5x mt-3" aria-hidden="true"></i>
-              <a href="orderList"><h3 >Order List</h3></a>
+              <a href="orderList" class="text-white" ><h3 >Order List</h3></a>
             </div>
             
           </div>
@@ -164,8 +164,8 @@
           <div class="card text-white text-center" style="background-color: #2a2a72;
           background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);">
             <div class="card-body">
-              <i class="fa fa-plus-circle fa-5x" aria-hidden="true"></i>
-              <h3 >Add New Orders</h3>
+                <i class="fas fa-chart-bar fa-5x mt-3"></i>
+              <h3 >Stock Details</h3>
             </div>
             
           </div>
@@ -176,8 +176,8 @@
           <div class="card text-white text-center" style="background-color: #2a2a72;
           background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);">
             <div class="card-body">
-              <i class="fa fa-plus-circle fa-5x" aria-hidden="true"></i>
-              <h3 >Add New Orders</h3>
+            <i class="fa fa-file fa-5x mt-3" aria-hidden="true"></i>
+              <h3 >Order Report </h3>
             </div>
             
           </div>

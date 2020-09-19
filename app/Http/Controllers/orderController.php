@@ -16,6 +16,7 @@ class orderController extends Controller
         $idCollection = $request -> fid;
         $quantities = $request -> qty;
         $nameCollection = $request->name;
+        $priceCollection = $request->price;
 
         $order -> orderCode = $request -> orderCode;
         $order -> orderType = $request -> orderType;
@@ -31,6 +32,7 @@ class orderController extends Controller
                 $order_item -> ItemId =  $cid;
                 $order_item -> ItemName = $nameCollection[$x];
                 $order_item -> quantity = $quantities[$x];
+                $order_item -> price = $priceCollection[$x];
                 $order_item -> save();
                 
             }
@@ -130,7 +132,7 @@ class orderController extends Controller
         }
 
         $order -> save();
-        return view('order_managment');
+        return redirect()->action('orderContoller@goToOrder');
 
         
 
@@ -148,4 +150,13 @@ class orderController extends Controller
 
     }
 
+    public function bill(Request $request){
+        $id = $request->oid;
+        $order = Order::find($id);
+        $ordeCode = $order -> orderCode;
+        $order_item_list = order_item::all();
+
+        return view('foodBill')->with('orderData',$order)->with('itemList',$order_item_list) ->with('oc',$ordeCode);
+
+    }
 }

@@ -38,7 +38,7 @@
         <div class="bg-dark " id="sidebar-wrapper" style="background: radial-gradient( circle farthest-corner at 10% 20%,  rgba(90,92,106,1) 0%, rgba(32,45,58,1) 81.3% );">
           <div class="sidebar-heading text-white" style="font-weight: bold;">Hotel Chathumadura</div>
           <div class="list-group list-group-flush mt-4">
-            <a href="#" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fa fa-dashboard" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Dashboard</p></a>
+            <a href="/home" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fa fa-dashboard" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Dashboard</p></a>
             <a href="#" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fa fa-bell" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Notifications</p></a>
             <a href="#" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fas fa-envelope-open-text" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Email</p></a>
             <a href="#" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fa fa-phone" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Customer Contacts</p></a>
@@ -168,6 +168,7 @@
                         $stat = $orderData->orderStatus;
                   @endphp
                   @if($value == "RM")
+                    @if($stat != "COMPLETED")
                         <form action="/deleteOrder" method="post">
                                   {{csrf_field()}}
                                 <input type="number" value="{{$orderData->id}}" name="oid" hidden>
@@ -182,17 +183,16 @@
                                   <button class="btn btn-warning">Update Details</button>
                                </div>
                            </form> 
+                    @endif
                            @if($stat == "COMPLETED")
-                           <div class="form-group" style="display: flex;justify-content: center;" >
-                              <button class="btn btn-primary">Pay Now</button>
-                           </div>
-                           <form action="/deleteOrder" method="post">
+                          
+                           <form action="/goToFoodBill" method="post">
                                   {{csrf_field()}}
                                 <input type="number" value="{{$orderData->id}}" name="oid" hidden>
                                 <div class="form-group" style="display: flex;justify-content: center;" >
-                                      <button class="btn btn-danger" type="submit">Remove Order</button>
+                                      <button class="btn btn-danger" type="submit">Pay Now</button>
                                 </div>
-                             </form>
+                            </form>
 
                            @endif
                     

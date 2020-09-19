@@ -37,7 +37,7 @@
         <div class="bg-dark " id="sidebar-wrapper" style="background: radial-gradient( circle farthest-corner at 10% 20%,  rgba(90,92,106,1) 0%, rgba(32,45,58,1) 81.3% );">
           <div class="sidebar-heading text-white" style="font-weight: bold;">Hotel Chathumadura</div>
           <div class="list-group list-group-flush mt-4">
-            <a href="#" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fa fa-dashboard" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Dashboard</p></a>
+            <a href="/home" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fa fa-dashboard" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Dashboard</p></a>
             <a href="#" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fa fa-bell" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Notifications</p></a>
             <a href="#" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fas fa-envelope-open-text" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Email</p></a>
             <a href="#" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fa fa-phone" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Customer Contacts</p></a>
@@ -110,12 +110,12 @@
       
                 <div class="form-group">
                   <label for="customerMobile">Customer Mobile Number </label>
-                  <input type="number" class="form-control" name="customerMobile" placeholder="07X -XXX-XX-XX" required>
+                  <input type="tel" class="form-control" name="customerMobile" placeholder="07X -XXX-XXXX" required   pattern="[0-9]{3}-[0-9]{7}">
                 </div>
 
                 <div class="form-group">
                   <label for="customerMobile">Customer Mobile Email </label>
-                  <input type="email" class="form-control" name="customerEmail" placeholder="tharinduudana66@gmail.com" >
+                  <input type="email" class="form-control" name="customerEmail" placeholder="customer@gmail.com" required>
                 </div>
       
                 <br/>
@@ -123,7 +123,7 @@
     
               <div class="form-group">
                 <label for="orderID">Order Code</label>
-                <input type="text" class="form-control" id="orderID" placeholder="OR001" name="orderCode">
+                <input type="text" class="form-control" id="orderID" placeholder="OR001" name="orderCode" required maxlength="10">
               </div>
               <div class="form-group">
                 <span>Select Order Type</span>
@@ -149,8 +149,9 @@
                         <div class="d-flex justify-content-start">
                           <label for="F01" style="height: 30px;margin-right: 30px;">{{$item->ItemName}}</label>
                           <input type="hidden" class="form-control " id="F01" name="fid[]" value="{{$item ->id}}">
-                          <input type="number" class="form-control " id="F01" name="qty[]">
+                          <input type="number" class="form-control " id="F01" name="qty[]"  min=0 >
                           <input type="hidden" class="form-control " id="F01" name="name[]" value="{{$item ->ItemName}}">
+                          <input type="hidden" class="form-control " id="F01" name="price[]" value="{{$item ->ItemPrice}}">
                         </div>
                       </li>
 

@@ -20,7 +20,7 @@ class CreateOrdersTable extends Migration
             $table->string('orderStatus') -> default('PENDING');
             $table->string('customerName');
             $table->string('customerEmail');
-            $table->integer('customerMobile');
+            $table->string('customerMobile');
 
             $table->timestamps();
         });

@@ -18,6 +18,7 @@ class CreateOrderItemsTable extends Migration
             $table->string('orderCode');
             $table->string('ItemName');
             $table->integer('ItemId');
+            $table->float('price');
             $table->integer('quantity');
 
             $table->timestamps();

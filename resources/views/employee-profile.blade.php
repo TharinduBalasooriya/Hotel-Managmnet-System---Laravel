@@ -33,7 +33,7 @@
         <div class="bg-dark " id="sidebar-wrapper" style="background: radial-gradient( circle farthest-corner at 10% 20%,  rgba(90,92,106,1) 0%, rgba(32,45,58,1) 81.3% );">
           <div class="sidebar-heading text-white" style="font-weight: bold;">Hotel Chathumadura</div>
           <div class="list-group list-group-flush mt-4">
-            <a href="#" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fa fa-dashboard" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Dashboard</p></a>
+            <a href="/home" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fa fa-dashboard" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Dashboard</p></a>
             <a href="#" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fa fa-bell" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Notifications</p></a>
             <a href="#" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fas fa-envelope-open-text" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Email</p></a>
             <a href="#" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fa fa-phone" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Customer Contacts</p></a>
@@ -116,8 +116,7 @@
           <label for="First Name"><b>First Name</b></label><br>
           <input type="text" placeholder="First Name" name="FirstName" id="FirstName" value="{{$user->firstName}}" required ><br>
 
-          <label for="Department"><b>Department</b></label><br>
-          <input type="text" placeholder="Department" name="Department" id="Department" value="{{$user->jobRole}}" required><br>
+         
           
           <label for="Martial Status"><b>Martial Status</b></label><br>
 
