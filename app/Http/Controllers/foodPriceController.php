@@ -13,6 +13,9 @@ class foodPriceController extends Controller
 
         $item ->ItemCode =  $request->itemCode;
         $item ->ItemName =  $request->itemName;
+        $this->validate($request,[
+            'itemName'=>'required|max:100|min:3'
+        ]);
         $item ->ItemPrice =  $request->price;
         
         $item ->save();

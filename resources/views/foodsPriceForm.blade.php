@@ -90,20 +90,26 @@
       <div class="container">
         <h1 class="text-info text-center ">Add New Meals Items</h1>
 
+        @foreach ($errors->all() as $error)
+        <div class="alert alert-danger" role="alert">
+                        {{$error}}
+        </div>
+        @endforeach
+
         <form action="/addFoodItem" method="post"><!--form-->
               {{csrf_field()}}
           <div class="form-group">
             <label for="exampleInputId">Item Code</label>
-            <input type="id" class="form-control" id="exampleInputId" aria-describedby="id" name="itemCode">
+            <input type="id" class="form-control" id="exampleInputId" aria-describedby="id" name="itemCode" required>
             
           </div>
           <div class="form-group">
             <label for="exampleInputName">Name</label>
-            <input type="name" class="form-control" id="exampleInputName" name="itemName">
+            <input type="name" class="form-control" id="exampleInputName" name="itemName" >
           </div>
           <div class="form-group">
             <label for="exampleInputPrice">Price</label>
-            <input type="price" class="form-control" id="exampleInputPrice" aria-describedby="nprice" name="price">
+            <input type="price" class="form-control" id="exampleInputPrice" aria-describedby="nprice" name="price" required>
             <small id="pricelHelp" class="form-text text-muted">LKR.</small>
           </div>
           
