@@ -91,3 +91,59 @@ Route::get('/uLogout','employeeContoller@logout');
 Route::get('/getUser','employeeContoller@getUserDetails');
 Route::post('/updateUser','employeeContoller@updateUser');
 Route::post('/deleteUser','employeeContoller@deleteUser');
+
+//=========================================================
+//===Tharika routes====///
+Route::get('/tablecreate', function () {
+    return view('CreateTableReservations');
+});
+
+Route::get('/tablesearch', function() {
+    return view('SearchID');
+});
+
+Route::get('/tableMyHome', function() {
+    return view('TableReservationManagement');
+});
+
+Route::post('/tablesave', 'InsertController@tableInsert');   
+
+Route::get('/tabledisplay', function() {
+  
+    $data=App\Insert::all();
+
+    return view('ReservationDisplay')->with('display', $data);
+});
+
+Route::get('/tableupdateRes/{id}','InsertController@tableUpdate');
+
+Route::post('/tableDBupdate', 'InsertController@tableDBUpdate');
+
+Route::get('/tabledelete/{id}','InsertController@tableDeleteData');
+//=====================================================================
+
+//===================gaya3 routes=======================================
+
+Route::get('/poolticIssue', 'poolpagescontroller@indexticketissue');
+
+Route::get('/swimpool', function () {
+    return view('swimmingpool');
+});
+
+Route::get('/poolreg', function () {
+    return view('poolmemberReg');
+});
+
+Route::get('/poolprof', function () {
+    $data=App\Task::all();
+    return view('poolmemberProf')->with('show',$data);
+});
+
+Route::post('/savemem','poolpagescontroller@Insert');
+
+Route::get('/updatepool/{id}','poolpagescontroller@UpdateRec');
+
+Route::post('/updatemember','poolpagescontroller@updatemember');
+
+Route::get('/pooldelete/{id}','poolpagescontroller@pooldeleteDB');
+//======================================================================

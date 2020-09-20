@@ -1,0 +1,94 @@
+div.container01 {
+    position: absolute;
+    width: 45%;
+    height: 20cm;
+    border: 2px solid black;
+    left: 480px;
+    text-align: center;
+    padding-right: 20px;
+}
+
+input[type=text] {
+	background: transparent;
+	border: none;
+	border-bottom-color: solid black;	
+	width: 40%;
+ 	border-width:2px;  
+    border-bottom-style:solid;
+	height: 30px;
+    font-size: 17px;
+    border-radius: 0ch; 
+    width: 6cm;
+    text-align: center;
+}
+
+input[type=date] {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid black;
+    border-radius: 0mm;  
+    height: 30px;
+    font-size: 17px;
+    width: 6cm; 
+    text-align: center;
+}
+
+input[type=time] {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid black;
+    border-radius: 0mm;
+    height: 30px;
+    font-size: 17px; 
+    width: 6cm; 
+    text-align: center;
+}
+
+ #occation {
+    background: transparent;
+    border: 2px solid black;
+    height: 30px;
+    font-size: 17px;
+    width: 6cm; 
+    text-align: center;
+}
+
+ #Request {
+    background: transparent;
+    border: 2px solid black;
+    font-size: 17px;
+    width: 6cm; 
+ }
+
+ #tableNum {
+    background: transparent;
+    border: 2px solid black;
+    height: 30px;
+    font-size: 17px;
+    width: 6cm; 
+    text-align: center;
+ }
+
+ label {
+   font-size: 15px;
+   font-family: serif;
+   padding-left: 2cm;
+ }
+
+ #button {
+    left: 190px;
+    position: absolute;
+    text-align: center;
+  	display: inline-block;
+  	font-size: 17px;
+  	border-radius: 12px;
+  	cursor: pointer;
+  	width: 40%;
+  	background: transparent;
+  	border-color:black;	
+  	border-width: 3px;  
+  	border-bottom-style:solid;
+    height: 40px;
+    color: black;
+}
+

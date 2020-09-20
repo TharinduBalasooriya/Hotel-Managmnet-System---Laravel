@@ -8,18 +8,23 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Simple Sidebar - Start Bootstrap Template</title>
+  <title> Reservations Details Page </title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href="css/simple-sidebar.css" rel="stylesheet">
+  <link href="css/Tablecss.css" rel="stylesheet">
 
   <!-- font awsome icons-->
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
 </head>
 
 <body>
@@ -71,13 +76,13 @@
            
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="text-white mr-3">{{session('userName', 'Employee')}}</span><i class="fas fa-user text-white"></i>
+                <span class="text-white mr-3">Resturant Manager</span><i class="fas fa-user text-white"></i>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">Action</a>
                 <a class="dropdown-item" href="#">Another action</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/uLogout">Log Out</a>
+                <a class="dropdown-item" href="#">Something else here</a>
               </div>
             </li>
           </ul>
@@ -88,102 +93,58 @@
 
       <!-- page contain starts from here-->
 
-      <div class="container mt-3	">
-        <h1 class="text-info text-center ">Add Price</h1>
+      <h2> Table Reservations Details </h2> <br> 
+    
+              <Table class= "table table-hover table-dark"> 
 
-      
-        <div class="row">
-          <div class="col-sm-4" ><!--Foods and Beverages-->
-            <div class="card border" >
-              <div class="card-header  text-white" style="height: 150px;background: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));" >
-                <div class="row">
-                  <div class="col-lg-4" style="text-align: left">
-                    <i class="fa fa-list fa-5x" aria-hidden="true"></i>
-                  </div>
-                  <div class="col-lg-8" style="text-align:right">
-                      <h4>Foods and Beverages</h4>
-                  </div>
-                  
-                </div>
-              </div>
-              <div class="card-footer text-muted bg-light">
-                   <a href="/addFoodItem" class="card-link " style="color: rgb(242, 112, 156);">Add New Item</a>
-                  <a href="#" class="card-link " style="color: rgb(242, 112, 156);"> <i class="fa fa-arrow-circle-right" style="float: right"></i></a>
-                   
-              </div>
-            </div>
-          </div><!--Foods and Beverages-->
-  
-          <div class="col-sm-4" ><!--Swimming Pool-->
-            <div class="card border" >
-              <div class="card-header  text-white" style="height: 150px;background: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));" >
-                <div class="row">
-                  <div class="col-lg-4" style="text-align: left">
-                    <i class="fa fa-list fa-5x" aria-hidden="true"></i>
-                  </div>
-                  <div class="col-lg-8" style="text-align:right">
-                      <h4>Swimming Pool</h4>
-                  </div>
-                  
-                </div>
-              </div>
-              <div class="card-footer text-muted bg-light">
-                   <a href="#" class="card-link " style="color: rgb(242, 112, 156);">Add New Item</a>
-                  <a href="#" class="card-link " style="color: rgb(242, 112, 156);"> <i class="fa fa-arrow-circle-right" style="float: right"></i></a>
-                   
-              </div>
-            </div>
-          </div><!--Swimming Pool-->
+                        <th> Reservation ID </th>
+                        <th> Table Number </th>
+                        <th> Customer Name </th>
+                        <th> Number Of Guest </th>
+                        <th> Date </th>
+                        <th> Time </th>
+                        <th> Phone Number</th>
+                        <th> Occation Type </th>
+                        <th> Assigned Waiter </th>
+                        <th> Special Request</th>
+                        <th> Action </th>
+                        <th> Action </th>
 
-          <div class="col-sm-4" ><!--Banquet Halls-->
-            <div class="card border" >
-              <div class="card-header  text-white" style="height: 150px;background: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));" >
-                <div class="row">
-                  <div class="col-lg-4" style="text-align: left">
-                    <i class="fa fa-list fa-5x" aria-hidden="true"></i>
-                  </div>
-                  <div class="col-lg-8" style="text-align:right">
-                      <h4>Banquet Halls</h4>
-                  </div>
-                  
-                </div>
-              </div>
-              <div class="card-footer text-muted bg-light">
-                   <a href="#" class="card-link " style="color: rgb(242, 112, 156);">Add New Item</a>
-                  <a href="#" class="card-link " style="color: rgb(242, 112, 156);"> <i class="fa fa-arrow-circle-right" style="float: right"></i></a>
-                   
-              </div>
-            </div>
-          </div><!--End of Banquet Halls-->
-          <button type="submit" class="btn btn-danger mt-3  ">I'm Done and Exit</button>
+                  @foreach($display as $disdata)
 
-         
-  
-          
-          
+                      <tr>
+                        <td> {{$disdata->id}}</td>
+                        <td> {{$disdata->tableNum}}</td>
+                        <td> {{$disdata->CusName}}</td>
+                        <td> {{$disdata->NumofGuest}}</td>
+                        <td> {{$disdata->date}}</td>
+                        <td> {{$disdata->time}}</td>
+                        <td> {{$disdata->Phone}}</td>
+                        <td> {{$disdata->occation}}</td>
+                        <td> {{$disdata->AssignWaiter}}</td>
+                        <td> {{$disdata->Request}}</td>
+                        <td> <a href="/tableupdateRes/{{$disdata->id}}" class="btn btn-danger"> Update </a>  </td>
+                        <td> <a href="/tabledelete/{{$disdata->id}}" class="btn btn-success"> Delete </a> </td>
+                      </tr>
+                  @endforeach
 
+              </table>
 
-
-
-
-
-    </div>
-    <!-- /#page-content-wrapper -->
-
-  </div>
+ <!-- /#page-content-wrapper -->
+           </div>
   <!-- /#wrapper -->
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <!-- Bootstrap core JavaScript -->
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Menu Toggle Script -->
-  <script>
-    $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-    });
-  </script>
+      <!-- Menu Toggle Script -->
+      <script>
+        $("#menu-toggle").click(function(e) {
+          e.preventDefault();
+          $("#wrapper").toggleClass("toggled");
+        });
+      </script>
 
 </body>
 

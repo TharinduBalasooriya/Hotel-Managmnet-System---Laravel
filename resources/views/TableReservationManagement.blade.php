@@ -8,18 +8,22 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Simple Sidebar - Start Bootstrap Template</title>
+  <title> Table Reservation Management </title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="css/simple-sidebar.css" rel="stylesheet">
+  <link href="/css/simple-sidebar.css" rel="stylesheet">
+  <link href="/css/TableReservationHome.css" rel="stylesheet">
 
   <!-- font awsome icons-->
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -71,13 +75,13 @@
            
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="text-white mr-3">{{session('userName', 'Employee')}}</span><i class="fas fa-user text-white"></i>
+                <span class="text-white mr-3">Restaurant Manager</span><i class="fas fa-user text-white"></i>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">Action</a>
                 <a class="dropdown-item" href="#">Another action</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/uLogout">Log Out</a>
+                <a class="dropdown-item" href="#">Something else here</a>
               </div>
             </li>
           </ul>
@@ -87,83 +91,106 @@
 
 
       <!-- page contain starts from here-->
+      <h2 style="text-align: center;margin-top: 30px;"> Table Reservations Management</h2>
 
-      <div class="container mt-3	">
-        <h1 class="text-info text-center ">Add Price</h1>
+      <div class="row" style="margin: 30px; margin-left: 8%;">
+        <div class="col-sm-3">
+
+          <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+            <div class="card-header text-center"> Today Reservations </div>
+            <div class="card-body">
+              <h1 style="text-align: center;">31</h1>
+              
+            </div>
+          </div>
+
+
+        </div>
+
+
+        <div class="col-sm-3">
+
+          <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+            <div class="card-header text-center"> Current in House </div>
+            <div class="card-body">
+              <h1 style="text-align: center;">13</h1>
+              
+            </div>
+          </div>
+
+
+        </div>
+
+        <div class="col-sm-3">
+
+          <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+            <div class="card-header text-center"> Expected Arrivals </div>
+              <div class="card-body">
+                <h1 style="text-align: center;">18</h1>  
+              </div>
+            </div>
+          </div>
+  
+  <div class="iframe">
+  <div style="text-align:center;padding:1em 0;"> <h3><a style="text-decoration:none;" href="https://www.zeitverschiebung.net/en/country/lk"><span style="color:gray;"> <b> Today </b> <br></span> </a></h3><iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=medium&timezone=Asia%2FColombo&show=hour_minute" width="110%" height="170%" frameborder="0" seamless></iframe> </div>  
+  </div>
+</div>
+  <br> <br> 
+
+      <div class="row customCard"  style="padding-left: 150px;padding-right: 30px " >
+
+        <div class="col-sm-6">
+          <div class="card text-white text-center" style="background-color: #6c33a3;
+          background-image: linear-gradient(316deg, #6c33a3 0%, #8241b8 50%);">
+            <div class="card-body">
+              <i class="fa fa-plus-circle fa-5x mt-3" aria-hidden="true"></i>
+             <a href="/tablecreate"><h3 > Create a New Reservation </h3></a>
+            </div>
+            
+          </div>
+
+        </div>
+
+        <div class="col-sm-6">
+          <div class="card text-white text-center" style="background-color: #3bb78f;
+          background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 50%);
+          ">
+            <div class="card-body">
+              <i class="fa fa-list fa-5x mt-3" aria-hidden="true"></i>
+              <h3 > Update Table Reservation </Table></h3>
+            </div>
+            
+          </div>
+
+        </div>
+
+        <div class="col-sm-6">
+          <div class="card text-white text-center" style="background-color: #2a2a72;
+          background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 50%);">
+            <div class="card-body">
+              <i class="fa fa-plus-circle fa-5x" aria-hidden="true"></i>
+              <h3 > See Available Waiters </h3>
+            </div>
+            
+          </div>
+
+        </div>
+
+        <div class="col-sm-6">
+          <div class="card text-white text-center" style="background-color: #ffd700;
+          background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 50%);">
+            <div class="card-body">
+              <i class="fa fa-plus-circle fa-5x" aria-hidden="true"></i>
+              <h3 > See Table Reservations Details </h3>
+            </div>
+            
+          </div>
+
+        </div>
+       <!--item list finish -->
+      </div>
 
       
-        <div class="row">
-          <div class="col-sm-4" ><!--Foods and Beverages-->
-            <div class="card border" >
-              <div class="card-header  text-white" style="height: 150px;background: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));" >
-                <div class="row">
-                  <div class="col-lg-4" style="text-align: left">
-                    <i class="fa fa-list fa-5x" aria-hidden="true"></i>
-                  </div>
-                  <div class="col-lg-8" style="text-align:right">
-                      <h4>Foods and Beverages</h4>
-                  </div>
-                  
-                </div>
-              </div>
-              <div class="card-footer text-muted bg-light">
-                   <a href="/addFoodItem" class="card-link " style="color: rgb(242, 112, 156);">Add New Item</a>
-                  <a href="#" class="card-link " style="color: rgb(242, 112, 156);"> <i class="fa fa-arrow-circle-right" style="float: right"></i></a>
-                   
-              </div>
-            </div>
-          </div><!--Foods and Beverages-->
-  
-          <div class="col-sm-4" ><!--Swimming Pool-->
-            <div class="card border" >
-              <div class="card-header  text-white" style="height: 150px;background: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));" >
-                <div class="row">
-                  <div class="col-lg-4" style="text-align: left">
-                    <i class="fa fa-list fa-5x" aria-hidden="true"></i>
-                  </div>
-                  <div class="col-lg-8" style="text-align:right">
-                      <h4>Swimming Pool</h4>
-                  </div>
-                  
-                </div>
-              </div>
-              <div class="card-footer text-muted bg-light">
-                   <a href="#" class="card-link " style="color: rgb(242, 112, 156);">Add New Item</a>
-                  <a href="#" class="card-link " style="color: rgb(242, 112, 156);"> <i class="fa fa-arrow-circle-right" style="float: right"></i></a>
-                   
-              </div>
-            </div>
-          </div><!--Swimming Pool-->
-
-          <div class="col-sm-4" ><!--Banquet Halls-->
-            <div class="card border" >
-              <div class="card-header  text-white" style="height: 150px;background: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));" >
-                <div class="row">
-                  <div class="col-lg-4" style="text-align: left">
-                    <i class="fa fa-list fa-5x" aria-hidden="true"></i>
-                  </div>
-                  <div class="col-lg-8" style="text-align:right">
-                      <h4>Banquet Halls</h4>
-                  </div>
-                  
-                </div>
-              </div>
-              <div class="card-footer text-muted bg-light">
-                   <a href="#" class="card-link " style="color: rgb(242, 112, 156);">Add New Item</a>
-                  <a href="#" class="card-link " style="color: rgb(242, 112, 156);"> <i class="fa fa-arrow-circle-right" style="float: right"></i></a>
-                   
-              </div>
-            </div>
-          </div><!--End of Banquet Halls-->
-          <button type="submit" class="btn btn-danger mt-3  ">I'm Done and Exit</button>
-
-         
-  
-          
-          
-
-
-
 
 
 

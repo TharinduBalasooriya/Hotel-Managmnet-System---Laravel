@@ -1,0 +1,106 @@
+.split {
+    position: absolute;
+    top: 145px;  
+}
+
+.left {
+    left: 270px;
+    height: 50%;
+    width: 30%; 
+ }
+
+ .img {
+    opacity: 0.6;
+ }
+
+ .center {
+    position: absolute;
+    top: 40%;
+    left: 15%;
+    font-family: Times; 
+    color: rgb(48, 44, 44);
+ }
+
+ ::placeholder {
+    color: rgb(0,0,0);
+    font-size: 13px;
+ }
+
+  .right {
+    right: 110px;
+    background-color: rgb(231, 252, 231);	
+    width: 39%;
+    padding-bottom: 30px;
+}
+
+ #button {
+    left: 150px;
+    position: absolute;
+    text-align: center;
+  	 display: inline-block;
+  	 font-size: 17px;
+  	 border-radius: 12px;
+  	 cursor: pointer;
+    width: 50%;
+  	 background: transparent;
+  	 border-color:black;	
+  	 border-width: 3px;  
+  	 border-bottom-style:solid;
+    height: 40px;
+    color: black;
+}
+
+input[type=text] {
+    background: transparent;
+    border-radius: 0mm;
+    border: none;
+    border-bottom: 2px solid black;
+    border-top: none;
+    height: 30px;
+    font-size: 17px; 
+}
+
+input[type=date] {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid black;
+    border-radius: 0mm;  
+    height: 30px;
+    font-size: 17px;
+}
+
+input[type=time] {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid black;
+    border-radius: 0mm;
+    height: 30px;
+    font-size: 17px;  
+}
+
+ #occation {
+    background: transparent;
+    border: 2px solid black;
+    height: 30px;
+    font-size: 15px;
+    width: 5.6cm;
+}
+
+ #Request {
+    background: transparent;
+    border: 2px solid black;
+    font-size: 17px;
+ }
+
+ #tableNum {
+    background: transparent;
+    border: 2px solid black;
+    height: 30px;
+    font-size: 15px;
+    width: 5.6cm;
+ }
+
+ label {
+   font-size: 15px;
+   font-family: serif;
+ }

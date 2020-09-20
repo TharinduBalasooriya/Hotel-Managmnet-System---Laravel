@@ -110,7 +110,7 @@
       
                 <div class="form-group">
                   <label for="customerMobile">Customer Mobile Number </label>
-                  <input type="number" class="form-control" name="customerMobile" placeholder="07X -XXX-XX-XX" value="{{$orderData->customerMobile}}" required   pattern="[0-9]{3}-[0-9]{7}">
+                  <input type="tel" class="form-control" name="customerMobile" placeholder="07X -XXX-XX-XX" value="{{$orderData->customerMobile}}" required   pattern="[0-9]{3}-[0-9]{7}">
                 </div>
 
                 <div class="form-group">
@@ -152,7 +152,8 @@
                         <div class="d-flex justify-content-start">
                           <label for="F01" style="height: 30px;margin-right: 30px;">{{$item->ItemName}}</label>
                           <input type="hidden" class="form-control " id="F01" name="fid[]" value="{{$item ->id}}">
-                          <input type="number" class="form-control " id="F01" name="qty[]" value="{{$item ->quantity}}">
+                          <input type="number" class="form-control " id="F01" name="qty[]"  min=0 value="{{$item ->quantity}}">
+                          <input type="hidden" class="form-control " id="F01" name="price[]" value="{{$item ->price}}">
                           <input type="hidden" class="form-control " id="F01" name="name[]" value="{{$item ->ItemName}}">
                         </div>
                       </li>

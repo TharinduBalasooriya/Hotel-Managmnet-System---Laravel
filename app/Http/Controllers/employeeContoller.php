@@ -92,7 +92,7 @@ class employeeContoller extends Controller
         $user->mobile = $request->MobileNumber;
 
         $user->save();
-        return redirect()->action('employeeContoller@getUserDetails');
+        return view('staffindex');
     }
 
     public function deleteUser(Request $request){

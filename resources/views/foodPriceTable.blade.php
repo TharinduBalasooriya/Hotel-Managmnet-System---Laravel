@@ -71,7 +71,7 @@
            
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="text-white mr-3">Resturent Manager</span><i class="fas fa-user text-white"></i>
+                <span class="text-white mr-3">{{session('userName', 'Employee')}}</span><i class="fas fa-user text-white"></i>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">Action</a>
@@ -126,46 +126,11 @@
               
             
               
-              <tr>
-                <td>K1</td>
-                <td>Kotthu</td>
-                <td>450.00</td>
-                <td><button type="submit" class="btn btn-primary">Update</button></td>
-                <td><button type="submit" class="btn btn-warning">Delete</button></td>
-  
-              </tr>
-              <tr>
-                <td>N1</td>
-                <td>Noodles</td>
-                <td>280.00</td>
-                <td><button type="submit" class="btn btn-primary">Update</button></td>
-                <td><button type="submit" class="btn btn-warning">Delete</button></td>
-  
-              </tr>
-              <tr>
-                <td>F1</td>
-                <td>Fride Rice</td>
-                <td>500.00</td>
-                <td><button type="submit" class="btn btn-primary">Update</button></td>
-                <td><button type="submit" class="btn btn-warning">Delete</button></td>
-  
-              </tr>
-              <tr>
-                <td>D1</td>
-                <td>Hot Chocolate</td>
-                <td>180.00</td>
-                <td><button type="submit" class="btn btn-primary">Update</button></td>
-                <td><button type="submit" class="btn btn-warning">Delete</button></td>
-  
-              </tr>
-              <tr>
-                <td>A1</td>
-                <td>Fruits Salad</td>
-                <td>200.00</td>
-                <td><button type="submit" class="btn btn-primary">Update</button></td>
-                <td><button type="submit" class="btn btn-warning">Delete</button></td>
-  
-              </tr>
+              
+         
+        
+ 
+     
             </table>
 
           </div>

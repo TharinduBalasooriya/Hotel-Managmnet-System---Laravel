@@ -116,6 +116,7 @@ class orderController extends Controller
         $idCollection = $request -> fid;
         $quantities = $request -> qty;
         $nameCollection = $request->name;
+        $priceCollection = $request->price;
 
         $x = 0;
         foreach($idCollection as $cid){
@@ -124,6 +125,7 @@ class orderController extends Controller
                 $order_item -> orderCode = $request -> orderCode ;
                 $order_item -> ItemId =  $cid;
                 $order_item -> ItemName = $nameCollection[$x];
+                $order_item -> price = $priceCollection[$x];
                 $order_item -> quantity = $quantities[$x];
                 $order_item -> save();
                 
@@ -132,7 +134,8 @@ class orderController extends Controller
         }
 
         $order -> save();
-        return redirect()->action('orderContoller@goToOrder');
+        $allData = order::all();
+        return view('orderList') -> with('orders',$allData);  
 
         
 

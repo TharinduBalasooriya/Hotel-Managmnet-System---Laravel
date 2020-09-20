@@ -1,0 +1,39 @@
+
+.center {
+    
+    width: 50%;
+    border-radius: 5px;
+    
+  }
+
+  table {
+    border: 1px solid black;
+    width: 50%;
+    border-radius: 5px;
+  }
+
+  th, td {
+    padding: 5px 2px;
+    text-align: left;
+  }
+
+  .btn{
+    background-color: rgba(0,0,255,0.3);
+    border: none;
+    border-radius: 5px;
+    color: black;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+  }
+  .btn:hover {
+    background-color: #8B008B;
+    color: white;
+  }
+
+
+
+
+

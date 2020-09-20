@@ -1,0 +1,58 @@
+.img {
+    position: absolute;
+    left: 400px;
+    top: 200px;
+}
+
+div.container02 {
+    position: absolute;
+    background-color: rgb(253, 252, 252);
+    right: 230px;
+    border-color: black;
+    top: 300px;
+    width: 450px;
+    height: 300px;
+
+}
+
+div.container03 {
+    background-image: url("/img/background02.jpg");
+    height: 770px;
+    width: 1350px;
+    top: 0px;
+    background-repeat: no-repeat;
+    
+}
+
+#button {
+    left: 120px;
+    position: absolute;
+    text-align: center;
+  	display: inline-block;
+  	font-size: 17px;
+  	border-radius: 12px;
+  	cursor: pointer;
+  	width: 50%;
+  	background: transparent;
+  	border-color: black;	
+  	border-width: 3px;  
+  	border-bottom-style:solid;
+    height: 40px;
+    color: black;
+}
+
+Input[type=text] {
+    background: transparent;
+    border-radius: 0mm;
+    border: none;
+    border-bottom: 2px solid black;
+    border-top: none;
+    height: 30px;
+    font-size: 17px; 
+}
+
+label {
+    font-size: 22px;
+    font-family: serif;
+  }
+

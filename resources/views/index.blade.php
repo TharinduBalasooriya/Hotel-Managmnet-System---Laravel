@@ -71,7 +71,7 @@
            
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="text-white mr-3">Resturent Manager</span><i class="fas fa-user text-white"></i>
+                <span class="text-white mr-3">{{session('userName', 'Employee')}}</span><i class="fas fa-user text-white"></i>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">Settings</a>
@@ -252,8 +252,8 @@
                 </div>
               </div>
               <div class="card-footer text-muted bg-light">
-                   <a href="#" class="card-link " style="color: rgba(165,41,185,1);">View Details</a>
-                  <a href="#" class="card-link " style="color: rgba(165,41,185,1);"> <i class="fa fa-arrow-circle-right" style="float: right"></i></a>
+                   <a href="/tableMyHome" class="card-link " style="color: rgba(165,41,185,1);">View Details</a>
+                  <a href="/tableMyHome" class="card-link " style="color: rgba(165,41,185,1);"> <i class="fa fa-arrow-circle-right" style="float: right"></i></a>
                    
               </div>
             </div>

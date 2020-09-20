@@ -1,0 +1,17 @@
+table {
+    width: 100%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+  }
+  
+  th {
+    height: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+  }
+
+  h2 {
+      text-align: center;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
