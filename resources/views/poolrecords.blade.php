@@ -1,4 +1,9 @@
-<!DOCKTYPE html>
+@if (!session()->has('userID'))
+  @php
+    echo App\Http\Controllers\employeeContoller::slogout();
+  @endphp
+@else
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8"/>
@@ -41,3 +46,5 @@
 
 
 </body>
+</html>
+@endif

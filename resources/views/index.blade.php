@@ -1,7 +1,14 @@
+
+@if (!session()->has('userID'))
+  @php
+    echo App\Http\Controllers\employeeContoller::slogout();
+  @endphp
+@else
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,6 +30,8 @@
 </head>
 
 <body >
+
+
  
 <div class="d-flex" id="wrapper">
 
@@ -208,8 +217,8 @@
                 </div>
               </div>
               <div class="card-footer text-muted bg-light">
-                   <a href="#" class="card-link">View Details</a>
-                  <a href="#" class="card-link"> <i class="fa fa-arrow-circle-right" style="float: right"></i></a>
+                   <a href="swimpool" class="card-link">View Details</a>
+                  <a href="swimpool" class="card-link"> <i class="fa fa-arrow-circle-right" style="float: right"></i></a>
                    
               </div>
             </div>
@@ -307,3 +316,4 @@
 </body>
 
 </html>
+@endif

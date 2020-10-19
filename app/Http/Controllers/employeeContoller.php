@@ -56,13 +56,19 @@ class employeeContoller extends Controller
 
     }
 
-    public function logout(Request $request){
+    public  function logout(Request $request){
         $request->session()->forget('userID');
         $request->session()->forget('userName');
         $request->session()->forget('jobRole');
         $request->session()->flush();
         $request->session()->regenerate();
         return view('userLogin');
+        
+    }
+
+    public  static function slogout(){
+
+        return redirect()->back();
         
     }
 

@@ -40,7 +40,7 @@ Route::get('/register', function(){
     return view('add-employee');
 });
 
-
+//----Tharindu==Order Managment Route ================
 Route::get('/addOrders', 'orderController@goToAdd');
 Route::get('/orderList', 'orderController@goToOrder');
 Route::get('/viewOrderDetails/{id}', 'orderController@viewDetails');
@@ -48,10 +48,12 @@ Route::get('/viewOrderDetails/{id}', 'orderController@viewDetails');
 Route::post('/addNewOrder','orderController@store');
 Route::post('/updateOrderStatus','orderController@updateStatus');
 Route::post('/deleteOrder','orderController@deleteOrder');
+Route::post('/downloadBill','orderController@downloadBill');
 Route::post('/getOrder','orderController@findOrder');
 Route::post('/updateOrder','orderController@updateOrder');
 Route::post('/goToFoodBill','orderController@bill');
-
+Route::get('/orderReport','orderController@downloadOrderReport');
+//=============================================================
 
 Route::post('/addFoodItem','foodPriceController@store');
 

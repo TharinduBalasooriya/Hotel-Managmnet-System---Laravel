@@ -1,4 +1,9 @@
-<<!DOCTYPE html>
+@if (!session()->has('userID'))
+  @php
+    echo App\Http\Controllers\employeeContoller::slogout();
+  @endphp
+@else
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -152,3 +157,6 @@ background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, F
       $("#wrapper").toggleClass("toggled");
     });
   </script>
+
+</html>
+@endif

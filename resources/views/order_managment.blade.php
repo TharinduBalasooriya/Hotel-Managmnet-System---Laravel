@@ -1,3 +1,8 @@
+@if (!session()->has('userID'))
+  @php
+    echo App\Http\Controllers\employeeContoller::slogout();
+  @endphp
+@else
 <!DOCTYPE html>
 <html lang="en">
 
@@ -177,7 +182,7 @@
           background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);">
             <div class="card-body">
             <i class="fa fa-file fa-5x mt-3" aria-hidden="true"></i>
-              <h3 >Order Report </h3>
+              <a href="orderReport" class="text-white"><h3 >Order Report </h3></a>
             </div>
             
           </div>
@@ -211,3 +216,4 @@
 </body>
 
 </html>
+@endif

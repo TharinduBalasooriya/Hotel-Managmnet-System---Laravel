@@ -1,3 +1,8 @@
+@if (!session()->has('userID'))
+  @php
+    echo App\Http\Controllers\employeeContoller::slogout();
+  @endphp
+@else
 <!DOCTYPE html>
 <html lang="en">
 
@@ -213,3 +218,4 @@
 </body>
 
 </html>
+@endif

@@ -1,3 +1,8 @@
+@if (!session()->has('userID'))
+  @php
+    echo App\Http\Controllers\employeeContoller::slogout();
+  @endphp
+@else
 <!DOCTYPE html>
 <html lang="en">
 
@@ -244,3 +249,4 @@ for (var i = 0; i < btns.length; i++) {
 </body>
 
 </html>
+@endif

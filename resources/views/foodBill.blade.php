@@ -1,3 +1,8 @@
+@if (!session()->has('userID'))
+  @php
+    echo App\Http\Controllers\employeeContoller::slogout();
+  @endphp
+@else
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -78,9 +83,17 @@
             <button class="button" type="submit">Finish Payment & Remove Order</button>
       </div>
   </form>
+    <form action="/downloadBill" method="POST">
+      {{csrf_field()}}
+      <input type="number" value="{{$orderData->id}}" name="oid" hidden>
+        <div class="form-group" style="display: flex;justify-content: center;" >
+          <button class="button" type="submit">Print Bill</button>
+        </div>
+</form>
     </main>
     <footer>
       Invoice was created on a computer and is valid without the signature and seal.
     </footer>
   </body>
 </html>
+@endif

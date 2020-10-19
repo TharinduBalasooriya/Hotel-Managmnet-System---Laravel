@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\order;
 use App\order_item;
 use App\testItem;
+use App\Past_Orders;
+use PDF;
 
 class orderController extends Controller
 {
@@ -140,18 +142,44 @@ class orderController extends Controller
         
 
     }
-
+ 
     public function deleteOrder(Request $request){
             
             $id = $request->oid;
             $order = Order::find($id);
             $ordeCode = $order -> orderCode;
+            $this->addToPastOrder($order);
             order_item::whereIn('orderCode', [$ordeCode])->delete();
             $order->delete();
             $allData = order::all();
-            return view('orderList') -> with('orders',$allData); 
+            return view('orderList') -> with('orders',$allData);
 
     }
+
+    public function addToPastOrder($order){
+        $price = 0;
+        $ordeCode = $order -> orderCode;
+        $item_list = order_item::whereIn('orderCode', [$ordeCode])->get();
+        foreach($item_list as $item){
+
+            $price += $item->price;
+        }
+        //dd($price);
+        $porder = new Past_Orders;
+        $porder -> orderCode = $order -> orderCode;
+        $porder -> orderType = $order -> orderType;
+        $porder -> price = $price;
+        $porder -> customerName = $order -> customerName;
+        $porder -> customerMobile = $order -> customerMobile;
+        $porder -> customerEmail = $order ->customerEmail;
+
+        $porder -> save();
+
+
+
+
+    }
+
 
     public function bill(Request $request){
         $id = $request->oid;
@@ -162,4 +190,33 @@ class orderController extends Controller
         return view('foodBill')->with('orderData',$order)->with('itemList',$order_item_list) ->with('oc',$ordeCode);
 
     }
+
+    public function downloadBill(Request $request){
+
+
+
+        $id = $request->oid;
+       
+        $orderData = Order::find($id);
+        $oc = $orderData ->orderCode;
+        $itemList = order_item::all();
+
+        //return view('foodBill')->with('orderData',$orderData)->with('itemList',$itemList) ->with('oc',$oc);
+        
+        $pdf = PDF::loadView('foodBill', ['orderData' => $orderData,'oc' => $oc, 'itemList' => $itemList]);
+        //$pdf = PDF::loadView('foodBill')->with('orderData');
+        return $pdf->download('bill.pdf');
+
+    }
+
+    public function downloadOrderReport(){
+
+        $orderList =  Past_Orders::all();
+        //return view('past_orders_report',['orderList' => $orderList]);
+        $pdf = PDF::loadView('past_orders_report', ['orderList' => $orderList]);
+        return $pdf->download('order_report.pdf');
+
+
+    }
+
 }
