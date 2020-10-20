@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Insert;
+use PDF;
 
 class InsertController extends Controller
 {
@@ -75,6 +76,18 @@ class InsertController extends Controller
         $datas=Insert::all();
    
         return view('ReservationDisplay')->with('display',$datas);
+    }
 
+    public function getAllTableRes() {
+        
+        $datas=Insert::all();
+        return view('tableReservationPDF',compact('datas'));
+    }
+
+    public function tableResPdf(){
+
+        $datas=Insert::all();
+        $pdf = PDF::loadView('tableReservationPDF',compact('datas'));
+        return $pdf->download('TableReservation.pdf');
     }
 }

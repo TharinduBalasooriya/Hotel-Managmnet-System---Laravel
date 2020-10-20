@@ -1,9 +1,3 @@
-@if (!session()->has('userID'))
-  @php
-    echo App\Http\Controllers\employeeContoller::slogout();
-  @endphp
-@else
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +15,6 @@
 
   <!-- Custom styles for this template -->
   <link href="css/simple-sidebar.css" rel="stylesheet">
-  <link href="css/order_mgmt.css" rel="stylesheet">
 
   <!-- font awsome icons-->
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
@@ -42,7 +35,7 @@
         <div class="bg-dark " id="sidebar-wrapper" style="background: radial-gradient( circle farthest-corner at 10% 20%,  rgba(90,92,106,1) 0%, rgba(32,45,58,1) 81.3% );">
           <div class="sidebar-heading text-white" style="font-weight: bold;">Hotel Chathumadura</div>
           <div class="list-group list-group-flush mt-4">
-            <a href="/home" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fa fa-dashboard" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Dashboard</p></a>
+            <a href="#" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fa fa-dashboard" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Dashboard</p></a>
             <a href="#" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fa fa-bell" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Notifications</p></a>
             <a href="#" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fas fa-envelope-open-text" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Email</p></a>
             <a href="#" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fa fa-phone" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Customer Contacts</p></a>
@@ -78,13 +71,13 @@
            
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="text-white mr-3">{{session('userName', 'Employee')}}</span><i class="fas fa-user text-white"></i>
+                <span class="text-white mr-3">Resturent Manager</span><i class="fas fa-user text-white"></i>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">Action</a>
                 <a class="dropdown-item" href="#">Another action</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/uLogout">Log Out</a>
+                <a class="dropdown-item" href="#">Something else here</a>
               </div>
             </li>
           </ul>
@@ -94,37 +87,89 @@
 
 
       <!-- page contain starts from here-->
+      <div class="container">
+        <h1 class="text-info text-center ">Edit Customer Details To Reservation</h1>
 
-    <div>
-        <h1>DAILY POOL RECORDS</h1>
-</div>
+        @foreach ($errors->all() as $error)
+        <div class="alert alert-danger" role="alert">
+                        {{$error}}
+        </div>
+        @endforeach
 
-<div>
-<div>
-<table> 
+        <form action="/updateReservation" method="post"><!--form-->
+          
+             {{csrf_field()}}
+          <div class="form-group">
+            <label for="fname">Customer Name</label>
+            <input type="text" class="form-control" value="{{$cus->customerName}}" id="fname" aria-describedby="id" name="name" required>
+          </div>  
+          
+          <div class="form-group">
+            <label for="ccnum">NIC</label>
+            <input type="text" class="form-control" value="{{$cus->NIC}}" id="ccnum" aria-describedby="id" name="nic" required>
+          </div>  
+        
+          <div class="form-group">
+            <label for="email">Customer Email</label>
+            <input type="text" class="form-control" value="{{$cus->email}}" id="email" aria-describedby="id" name="email" required>
+          </div>  
 
-<tr>
-<th>MID</th>
-<th>Name</th>
-<th>Phone</th>
-<th>City</th>
-<th>Weight</th>
-<th>Height</th>
-<th>Gender</th>
-<tr>
+          <div class="form-group">
+            <label for="ccnum">Customer Mobile Number</label>
+            <input type="text" class="form-control" value="{{$cus->mobile}}" id="ccnum" aria-describedby="id" name="mobile" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="fname">Room ID</label>
+            <input type="text" class="form-control" value="{{$cus->roomID}}" id="fname" aria-describedby="id" name="rName" required>
+          </div>
 
 
-</table>
-</div>
-
-</div>
-
-
-	
+          <div class="form-group">
+            <label for="fname">Room Name</label>
+            <input type="text" class="form-control" value="{{$cus->roomName}}" id="fname" aria-describedby="id" name="roomName" required>
+          </div>
 
 
+          <div class="form-group">
+            <label for="ccnum">Room Charge</label>
+            <input type="text" class="form-control" value="{{$cus->roomCharge}}" id="ccnum" aria-describedby="id" name="price" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="cidate">Check in date</label>
+            <input type="date" id="cidate" value="{{$cus->check_in}}" aria-describedby="id" name="cidate" required>
+          </div>
 
+          <div class="form-group">
+            <label for="codate">Check out date</label>
+            <input type="date" id="codate" value="{{$cus->check_out}}" aria-describedby="id" name="codate" required>
+          </div>
 
+          <input type="hidden" class="form-control" id="exampleInputId" aria-describedby="id" name="id" value="{{$cus->id}}">  
+        
+
+          <button type="submit" class="btn btn-success">Edit</button>
+          
+          <br>
+          <button type="submit" class="btn btn-danger mt-3  ">Exit</button>
+        </form><br><!--End of form-->
+
+        
+
+      </div>
+      
+       
+      
+
+     
+      
+      
+     </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
   <!-- /#wrapper -->
 
   <!-- Bootstrap core JavaScript -->
@@ -142,4 +187,3 @@
 </body>
 
 </html>
-@endif

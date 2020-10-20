@@ -27,20 +27,13 @@
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
     
 </head>
 
 <body>
  
 <div class="d-flex" id="wrapper">
-
-
-
-
-
 
         <!-- Sidebar -->
         <div class="bg-dark " id="sidebar-wrapper" style="background: radial-gradient( circle farthest-corner at 10% 20%,  rgba(90,92,106,1) 0%, rgba(32,45,58,1) 81.3% );">
@@ -77,7 +70,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-              <a class="nav-link text-white" href="#">Home <i class="fas fa-home"></i> <span class="sr-only">(current)</span></a>
+              <a class="nav-link text-white" href="/tableMyHome">Home <i class="fas fa-home"></i> <span class="sr-only">(current)</span></a>
             </li>
            
             <li class="nav-item dropdown">
@@ -113,8 +106,8 @@
                         <th> Occation Type </th>
                         <th> Assigned Waiter </th>
                         <th> Special Request</th>
-                        <th> Action </th>
-                        <th> Action </th>
+                        <th> Update </th>
+                        <th> Delete </th>
 
                   @foreach($display as $disdata)
 
@@ -135,7 +128,7 @@
                   @endforeach
 
               </table>
-
+              
  <!-- /#page-content-wrapper -->
            </div>
   <!-- /#wrapper -->

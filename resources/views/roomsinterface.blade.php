@@ -1,9 +1,3 @@
-@if (!session()->has('userID'))
-  @php
-    echo App\Http\Controllers\employeeContoller::slogout();
-  @endphp
-@else
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +15,6 @@
 
   <!-- Custom styles for this template -->
   <link href="css/simple-sidebar.css" rel="stylesheet">
-  <link href="css/order_mgmt.css" rel="stylesheet">
 
   <!-- font awsome icons-->
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
@@ -42,7 +35,7 @@
         <div class="bg-dark " id="sidebar-wrapper" style="background: radial-gradient( circle farthest-corner at 10% 20%,  rgba(90,92,106,1) 0%, rgba(32,45,58,1) 81.3% );">
           <div class="sidebar-heading text-white" style="font-weight: bold;">Hotel Chathumadura</div>
           <div class="list-group list-group-flush mt-4">
-            <a href="/home" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fa fa-dashboard" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Dashboard</p></a>
+            <a href="#" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fa fa-dashboard" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Dashboard</p></a>
             <a href="#" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fa fa-bell" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Notifications</p></a>
             <a href="#" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fas fa-envelope-open-text" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Email</p></a>
             <a href="#" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fa fa-phone" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Customer Contacts</p></a>
@@ -78,13 +71,13 @@
            
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="text-white mr-3">{{session('userName', 'Employee')}}</span><i class="fas fa-user text-white"></i>
+                <span class="text-white mr-3">Resturent Manager</span><i class="fas fa-user text-white"></i>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">Action</a>
                 <a class="dropdown-item" href="#">Another action</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/uLogout">Log Out</a>
+                <a class="dropdown-item" href="#">Something else here</a>
               </div>
             </li>
           </ul>
@@ -94,37 +87,99 @@
 
 
       <!-- page contain starts from here-->
+      <div class="container mt-3">
+         <h1 class="text-info text-center ">Welcome To Rooms Reservation</h1>
 
-    <div>
-        <h1>DAILY POOL RECORDS</h1>
-</div>
+         <div class="row">
+         	<div class="col-sm-4" > <!--Add Rooms-->
+            <div class="card border" >
+              <div class="card-header  text-white bg-info" style="height: 150px;background-image: radial-gradient( circle 939px at 94.7% 50%,  rgba(0,178,169,1) 0%, rgba(0,106,101,1) 76.9% );" >
+                <div class="row">
+                  <div class="col-lg-4" style="text-align: left">
+                      <i class="fa fa-bed fa-4x" aria-hidden="true"></i>
+                  </div>
+                  <div class="col-lg-8" style="text-align:right">
+                      <h4>Add A Reservation</h4> 
+                  </div>
+                  
+                </div>
+              </div>
+              <div class="card-footer text-muted bg-light">
+                   <a href="/addRoom" class="card-link" style="color: rgba(0,178,169,1);">View Details</a>
+                  <a href="#" class="card-link" style="color: rgba(0,178,169,1);"> <i class="fa fa-arrow-circle-right" style="float: right"></i></a>
+                   
+              </div>
+            </div>
+          </div><!--End of Add Rooms-->
 
-<div>
-<div>
-<table> 
+          <div class="col-sm-4" ><!--View Rooms-->
+            <div class="card border" >
+              <div class="card-header  text-white bg-info" style="height: 150px;background-image: radial-gradient( circle 939px at 94.7% 50%,  rgba(0,178,169,1) 0%, rgba(0,106,101,1) 76.9% );" >
+                <div class="row">
+                  <div class="col-lg-4" style="text-align: left">
+                      <i class="fa fa-bed fa-4x" aria-hidden="true"></i>
+                  </div>
+                  <div class="col-lg-8" style="text-align:right">
+                      <h4>View Reservations</h4>
+                  </div>
+                  
+                </div>
+              </div>
+              <div class="card-footer text-muted bg-light">
+                   <a href="/viewReservationList" class="card-link" style="color: rgba(0,178,169,1);">View Details</a>
+                  <a href="/viewReservationList" class="card-link" style="color: rgba(0,178,169,1);"> <i class="fa fa-arrow-circle-right" style="float: right"></i></a>
+                   
+              </div>
+            </div>
+          </div><!--End of View Rooms-->
 
-<tr>
-<th>MID</th>
-<th>Name</th>
-<th>Phone</th>
-<th>City</th>
-<th>Weight</th>
-<th>Height</th>
-<th>Gender</th>
-<tr>
+           <div class="col-sm-4" ><!--Reports of Rooms Reservation-->
+            <div class="card border" >
+              <div class="card-header  text-white bg-info" style="height: 150px;background-image: radial-gradient( circle 939px at 94.7% 50%,  rgba(0,178,169,1) 0%, rgba(0,106,101,1) 76.9% );" >
+                <div class="row">
+                  <div class="col-lg-4" style="text-align: left">
+                      <i class="fa fa-bed fa-4x" aria-hidden="true"></i>
+                  </div>
+                  <div class="col-lg-8" style="text-align:right">
+                      <h4>Reports of Room Reservations</h4>
+                  </div>
+                  
+                </div>
+              </div>
+              <div class="card-footer text-muted bg-light">
+                   <a href="getReservationReport" class="card-link" style="color: rgba(0,178,169,1);">View Details</a>
+                  <a href="getReservationReport" class="card-link" style="color: rgba(0,178,169,1);"> <i class="fa fa-arrow-circle-right" style="float: right"></i></a>
+                   
+              </div>
+            </div>
+          </div><!--End of Reports of Rooms Reservation-->
+         	
+         	
 
 
-</table>
-</div>
-
-</div>
 
 
-	
+         </div>
+
+
+              </div>
+            </div>
+          </div>
 
 
 
 
+         </di>
+        
+
+      </div>
+
+
+
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
   <!-- /#wrapper -->
 
   <!-- Bootstrap core JavaScript -->
@@ -142,4 +197,3 @@
 </body>
 
 </html>
-@endif

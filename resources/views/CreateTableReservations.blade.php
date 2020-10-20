@@ -26,21 +26,12 @@
   <!-- font awsome icons-->
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     
 </head>
 
 <body>
  
 <div class="d-flex" id="wrapper">
-
-
-
-
-
 
         <!-- Sidebar -->
         <div class="bg-dark " id="sidebar-wrapper" style="background: radial-gradient( circle farthest-corner at 10% 20%,  rgba(90,92,106,1) 0%, rgba(32,45,58,1) 81.3% );">
@@ -103,13 +94,13 @@
       <div class="container">
         <div class="split left">
           <div class="img">
-            <img src="img/bell06.jpg" style="width:450px;height:635px;">
+            <img src="img/bell06.jpg" style="width:450px;height:580px;">
               <div class="center"> <h1> <b> Create a Table <br>&nbsp;&nbsp;&nbsp; Reservation... </b> </h1> </div>
            </div>
          </div>
        </div>
 
-      <div class="split right"> <br> <br>
+      <div class="split right"> 
           <form class="form-horizontal" method="post" action="/tablesave">
               {{csrf_field()}}
                       <div class="form-group">
@@ -131,42 +122,42 @@
                                                   </select>
                                      </div>
                                  </div>
-                           </div> <br>
+                           </div> 
 
                           <div class="row">
                               <label class="col-sm-5 control-label">Customer's Name: </label>
                                   <div class="col-md-5">
                                       <input class="form-control" id="CusName" type="text" name="CusName" required maxlength="191">
                                   </div>
-                          </div> <br>
+                          </div> 
 
                           <div class="row">
                               <label class="col-sm-5 control-label"> Number Of Guest: </label>
                                   <div class="col-md-5">
                                       <input class="form-control" id="NumofGuest" type="text" name="NumofGuest" required maxlength="10">
                                   </div>
-                          </div> <br>
+                          </div> 
 
                           <div class="row">
                               <label class="col-sm-5 control-label"> Date: </label>
                                   <div class="col-md-5">
                                       <input class="form-control" id="date" type="date" name="date" required>
                                   </div>
-                          </div> <br>
+                          </div>
 
                           <div class="row">
                               <label class="col-sm-5 control-label"> Time: </label>
                                   <div class="col-md-5">
                                       <input class="form-control" id="time" type="time" name="time" required>
                                   </div>
-                          </div> <br>
+                          </div> 
                           
                           <div class="row">
                               <label class="col-sm-5 control-label"> Phone Number: </label>
                                   <div class="col-md-5">
                                       <input class="form-control" id="Phone" type="text" name="Phone" required maxlength="10">
                                   </div>
-                          </div> <br>
+                          </div> 
                           
                           <div class="row">
                               <label class="col-sm-5 control-label"> Occasion Type: </label>
@@ -179,19 +170,19 @@
                                               </select>
                                       </div>
                                   </div>
-                          </div> <br>
+                          </div> 
 
                           <div class="row">
                               <label class="col-sm-5 control-label">Assign a Waiter:</label>
                                   <div class="col-md-5">
                                       <input class="form-control" id="AssignWaiter" type="text" name="AssignWaiter" required maxlength="50">
                                   </div>
-                          </div> <br>
+                          </div> 
 
                           <div class="row">
                               <label class="col-sm-5 control-label"> Any Special Request? </label>
                                   <div class="col-md-5">
-                                      <textarea class="form-control" rows="4" id="Request" name="Request" required></textarea>
+                                      <textarea class="form-control" rows="3" id="Request" name="Request" required></textarea>
                                   </div>
                           </div> <br>
 
@@ -200,7 +191,7 @@
                           </div> 
 
                 </div>
-              </form> <br>
+              </form> 
          </div>
      </div>
 

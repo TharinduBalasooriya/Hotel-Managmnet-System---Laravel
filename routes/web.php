@@ -95,8 +95,9 @@ Route::post('/updateUser','employeeContoller@updateUser');
 Route::post('/deleteUser','employeeContoller@deleteUser');
 
 //=========================================================
-//===Tharika routes====///
-Route::get('/tablecreate', function () {
+//===Tharika====Table Reservations=========================
+
+Route::get('/tablecreate', function () { 
     return view('CreateTableReservations');
 });
 
@@ -122,6 +123,12 @@ Route::get('/tableupdateRes/{id}','InsertController@tableUpdate');
 Route::post('/tableDBupdate', 'InsertController@tableDBUpdate');
 
 Route::get('/tabledelete/{id}','InsertController@tableDeleteData');
+
+Route::get('/gettablepdf','InsertController@getAllTableRes');
+
+Route::get('/downloadtablepdf','InsertController@tableResPdf'); 
+
+
 //=====================================================================
 
 //===================gaya3 routes=======================================
@@ -149,8 +156,47 @@ Route::post('/updatemember','poolpagescontroller@updatemember');
 
 Route::get('/pooldelete/{id}','poolpagescontroller@pooldeleteDB');
 
+
 Route::get('/get-all-member','poolpagescontroller@getAllMembers');
 
 Route::get('/download-pdf', 'poolpagescontroller@downloadPDF');
 
 //======================================================================
+//======================================================================
+//Banquet Hall Reservations
+Route::get('/addBanquetHallReservation', 'banquetHallsController@goToReserve');
+Route::post('/saveBanquetHallReservation', 'banquetHallsController@store');
+Route::get('/viewBanquetHallReservations', 'banquetHallsController@getReservationList');
+Route::post('/deleteBanquetHallReservation', 'banquetHallsController@deleteReservation');
+Route::post('/updateBanquetHallReservation', 'banquetHallsController@viewReservation');
+Route::post('/saveUpdatedBanquetHallReservation', 'banquetHallsController@updateReservation');
+Route::get('/banquet-hall-reservations', function(){
+    return view('banquet_hall_reservations');
+});
+
+//room reservation routes
+Route::get('/roomReservation', function () {
+   
+    return view('roomsinterface');
+});
+
+Route::get('/addRoom', function () {
+    return view('addrooms');
+});
+
+Route::get('/getDetails', function () {
+    return view('CheckRooms');
+});
+
+Route::get('/getMemeber', function () {
+    return view('getmemberdetails');
+});
+
+Route::post('/viewReservation','roomController@view');
+Route::get('/viewReservationList','roomController@viewAll');
+Route::post('/saveReservation','roomController@save');
+Route::post('/deleteReservation','roomController@delete');
+Route::post('/updateReservation','roomController@update');
+
+Route::get('/getReservationReport','roomController@downloadRoomReport');
+

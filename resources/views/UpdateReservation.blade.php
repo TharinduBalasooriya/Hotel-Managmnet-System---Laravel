@@ -27,19 +27,13 @@
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
     
 </head>
 
 <body>
  
 <div class="d-flex" id="wrapper">
-
-
-
-
 
 
         <!-- Sidebar -->
@@ -99,113 +93,113 @@
 
       <!-- page contain starts from here-->
 
-
       <div class="container01">
 
-          <h2> Update Table Reservation </h2> <br> <br>
+      <h3> Update Table Reservation </h3>
         
-              <form class="form-horizontal" method="post" action="/tableDBupdate">
-              {{csrf_field()}}
+        <form class="form-horizontal" method="post" action="/tableDBupdate">
+        {{csrf_field()}}
 
-                    <div class="form-group">
+              <div class="form-group">
 
-                            <div class="row"> 
-                                <label class="col-sm-5 control-label">Reservation ID: </label>
-                                    <div class="col-md-7">
-                                        <input class="form-control" id="id" type="text" name="id" value="{{$updatetasks->id}}" required/>
-                                    </div> 
-                            </div> <br>
+                      <div class="row"> 
+                          <label class="col-sm-5 control-label">Reservation ID: </label>
+                              <div class="col-md-7">
+                                  <input class="form-control" id="id" type="text" name="id" value="{{$updatetasks->id}}" required/>
+                              </div> 
+                      </div> 
 
-                            <div class="row">
-                                <label class="col-sm-5 control-label"> Table Number: </label>
-                                <div class="col-md-1">
-                                    <div class="dropdown">
-                                            <select name ="tableNum" type="button" data-toggle="dropdown" id="tableNum" name="tableNum"  value="{{$updatetasks->tableNum}}" required maxlength="10"> See avaliable Table </button>
-                                                  <option value = "T01"> T01 </option>
-                                                  <option value = "T02"> T02 </option>
-                                                  <option value = "T03"> T03 </option> 
-                                                  <option value = "T04"> T04 </option>
-                                                  <option value = "T05"> T05 </option>
-                                                  <option value = "T06"> T06 </option>
-                                                  <option value = "T07"> T07 </option>
-                                                  <option value = "T08"> T08 </option>
-                                                  <option value = "T09"> T09 </option>
-                                           </select>
+                      <div class="row">
+                          <label class="col-sm-5 control-label"> Table Number: </label>
+                          <div class="col-md-1">
+                              <div class="dropdown">
+                                      <select name ="tableNum" type="button" data-toggle="dropdown" id="tableNum" name="tableNum"  value="{{$updatetasks->tableNum}}" required maxlength="10"> See avaliable Table </button>
+                                            <option value = "T01"> T01 </option>
+                                            <option value = "T02"> T02 </option>
+                                            <option value = "T03"> T03 </option> 
+                                            <option value = "T04"> T04 </option>
+                                            <option value = "T05"> T05 </option>
+                                            <option value = "T06"> T06 </option>
+                                            <option value = "T07"> T07 </option>
+                                            <option value = "T08"> T08 </option>
+                                            <option value = "T09"> T09 </option>
+                                     </select>
+                              </div>
+                          </div> 
+                        </div>
+
+                      <div class="row">
+                          <label class="col-sm-5 control-label">Customer's Name: </label>
+                              <div class="col-md-7">
+                                  <input class="form-control" id="CusName" type="text" name="CusName" value="{{$updatetasks->CusName}}" required maxlength="60"/>
+                              </div>
+                      </div> 
+
+                      <div class="row">
+                          <label class="col-sm-5 control-label">Number Of Guest: </label>
+                              <div class="col-md-5">
+                                  <input class="form-control" id="NumofGuest" type="text" name="NumofGuest" value="{{$updatetasks->NumofGuest}}" required maxlength="10"/>
+                              </div>
+                      </div>
+
+                      <div class="row">
+                          <label class="col-sm-5 control-label"> Date: </label>
+                              <div class="col-md-5">
+                                  <input class="form-control" id="date" type="date" name="date" value="{{$updatetasks->date}}" required/>
+                              </div>
+                      </div> 
+
+                      <div class="row">
+                          <label class="col-sm-5 control-label">Time: </label>
+                              <div class="col-md-5">
+                                  <input class="form-control" id="time" type="time" name="time" value="{{$updatetasks->time}}" required/>
+                              </div>
+                      </div> 
+                      
+                      <div class="row">
+                          <label class="col-sm-5 control-label">Phone Number: </label>
+                              <div class="col-md-6">
+                                  <input class="form-control" id="Phone" type="text" name="Phone" value="{{$updatetasks->Phone}}" required/>
+                              </div>
+                      </div> 
+                      
+                      <div class="row">
+                          <label class="col-sm-5 control-label"> Occasion Type: </label>
+                              <div class="col-md-5">
+                                  <div class="dropdown">
+                                        <select name="occation" type="button" data-toggle="dropdown" id="occation" name="occation" value="{{$updatetasks->occation}}" required maxlength="50"> See avaliable Table </button>
+                                                <option value = "family"> Family Time </option>
+                                                <option value = "birthday"> Birthday Celebration </option>
+                                                <option value = "annivasary"> Annivasary Celebration </option> 
+                                      </select>
                                     </div>
-                                </div> 
-                              </div> <br>
+                              </div>
+                        </div> 
 
-                            <div class="row">
-                                <label class="col-sm-5 control-label">Customer's Name: </label>
-                                    <div class="col-md-7">
-                                        <input class="form-control" id="CusName" type="text" name="CusName" value="{{$updatetasks->CusName}}" required maxlength="60"/>
-                                    </div>
-                            </div> <br>
+                      <div class="row">
+                          <label class="col-sm-5 control-label">Assign a Waiter:</label>
+                              <div class="col-md-5">
+                                  <input class="form-control" id="AssignWaiter" type="text" name="AssignWaiter" value="{{$updatetasks->AssignWaiter}}" required maxlength="10"/>
+                              </div>
+                      </div> 
 
-                            <div class="row">
-                                <label class="col-sm-5 control-label">Number Of Guest: </label>
-                                    <div class="col-md-5">
-                                        <input class="form-control" id="NumofGuest" type="text" name="NumofGuest" value="{{$updatetasks->NumofGuest}}" required maxlength="10"/>
-                                    </div>
-                            </div> <br>
+                      <div class="row">
+                          <label class="col-sm-5 control-label">Any Special Request? </label>
+                              <div class="col-md-5">
+                                  <textarea class="form-control" rows="1" id="Request" name="Request" value="{{$updatetasks->Request}}" required> </textarea>
+                              </div>
+                      </div> <br>
 
-                            <div class="row">
-                                <label class="col-sm-5 control-label"> Date: </label>
-                                    <div class="col-md-5">
-                                        <input class="form-control" id="date" type="date" name="date" value="{{$updatetasks->date}}" required/>
-                                    </div>
-                            </div> <br>
+                      <div class="row">
+                              <div class="center">
+                                  <input type="submit" class="btn btn-warning" id="button" value="Update Reservation">
+                              </div>
+                      </div> 
 
-                            <div class="row">
-                                <label class="col-sm-5 control-label">Time: </label>
-                                    <div class="col-md-5">
-                                        <input class="form-control" id="time" type="time" name="time" value="{{$updatetasks->time}}" required/>
-                                    </div>
-                            </div> <br>
-                            
-                            <div class="row">
-                                <label class="col-sm-5 control-label">Phone Number: </label>
-                                    <div class="col-md-6">
-                                        <input class="form-control" id="Phone" type="text" name="Phone" value="{{$updatetasks->Phone}}" required/>
-                                    </div>
-                            </div> <br>
-                            
-                            <div class="row">
-                                <label class="col-sm-5 control-label"> Occasion Type: </label>
-                                    <div class="col-md-5">
-                                        <div class="dropdown">
-                                              <select name="occation" type="button" data-toggle="dropdown" id="occation" name="occation" value="{{$updatetasks->occation}}" required maxlength="50"> See avaliable Table </button>
-                                                      <option value = "family"> Family Time </option>
-                                                      <option value = "birthday"> Birthday Celebration </option>
-                                                      <option value = "annivasary"> Annivasary Celebration </option> 
-                                            </select>
-                                          </div>
-                                    </div>
-                              </div> <br>
+              </div>
+         </form> 
+  </div>
 
-                            <div class="row">
-                                <label class="col-sm-5 control-label">Assign a Waiter:</label>
-                                    <div class="col-md-5">
-                                        <input class="form-control" id="AssignWaiter" type="text" name="AssignWaiter" value="{{$updatetasks->AssignWaiter}}" required maxlength="10"/>
-                                    </div>
-                            </div> <br>
-
-                            <div class="row">
-                                <label class="col-sm-5 control-label">Any Special Request? </label>
-                                    <div class="col-md-5">
-                                        <textarea class="form-control" rows="4" id="Request" name="Request" value="{{$updatetasks->Request}}" required> </textarea>
-                                    </div>
-                            </div> <br>
-
-                            <div class="row">
-                                    <div class="center">
-                                        <input type="submit" class="btn btn-warning" id="button" value="Update Reservation">
-                                    </div>
-                            </div> <br>
-
-                    </div>
-               </form>
-        </div>
     
   <!-- /#page-content-wrapper -->
      </div>

@@ -1,9 +1,3 @@
-@if (!session()->has('userID'))
-  @php
-    echo App\Http\Controllers\employeeContoller::slogout();
-  @endphp
-@else
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +15,6 @@
 
   <!-- Custom styles for this template -->
   <link href="css/simple-sidebar.css" rel="stylesheet">
-  <link href="css/order_mgmt.css" rel="stylesheet">
 
   <!-- font awsome icons-->
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
@@ -42,7 +35,7 @@
         <div class="bg-dark " id="sidebar-wrapper" style="background: radial-gradient( circle farthest-corner at 10% 20%,  rgba(90,92,106,1) 0%, rgba(32,45,58,1) 81.3% );">
           <div class="sidebar-heading text-white" style="font-weight: bold;">Hotel Chathumadura</div>
           <div class="list-group list-group-flush mt-4">
-            <a href="/home" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fa fa-dashboard" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Dashboard</p></a>
+            <a href="#" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fa fa-dashboard" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Dashboard</p></a>
             <a href="#" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fa fa-bell" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Notifications</p></a>
             <a href="#" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fas fa-envelope-open-text" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Email</p></a>
             <a href="#" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fa fa-phone" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Customer Contacts</p></a>
@@ -78,13 +71,13 @@
            
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="text-white mr-3">{{session('userName', 'Employee')}}</span><i class="fas fa-user text-white"></i>
+                <span class="text-white mr-3">Resturent Manager</span><i class="fas fa-user text-white"></i>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">Action</a>
                 <a class="dropdown-item" href="#">Another action</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/uLogout">Log Out</a>
+                <a class="dropdown-item" href="#">Something else here</a>
               </div>
             </li>
           </ul>
@@ -94,37 +87,29 @@
 
 
       <!-- page contain starts from here-->
+         <div class="container"><!--Rooms Reservation-->
+        <h1 class="text-info text-center ">Rooms Checking</h1>
 
-    <div>
-        <h1>DAILY POOL RECORDS</h1>
-</div>
+        <form action="/getDetails" method ="get">
+  <label for="cdate">Check in date</label><br>
+  <input type="date" id="cdate" name="cdate" value="date"><br>
+  <label for="codate">Check out date</label><br>
+  <input type="date" id="codate" name="codate" value="date"><br><br>
+ <td><button type="submit" class="btn btn-primary">Check availability</button></td>
+</form> 
 
-<div>
-<div>
-<table> 
+      
+          
 
-<tr>
-<th>MID</th>
-<th>Name</th>
-<th>Phone</th>
-<th>City</th>
-<th>Weight</th>
-<th>Height</th>
-<th>Gender</th>
-<tr>
-
-
-</table>
-</div>
-
-</div>
-
-
-	
+      </div><!--End of Rooms Reservation-->
 
 
 
 
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
   <!-- /#wrapper -->
 
   <!-- Bootstrap core JavaScript -->
@@ -142,4 +127,3 @@
 </body>
 
 </html>
-@endif
