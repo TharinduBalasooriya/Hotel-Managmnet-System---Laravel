@@ -16,7 +16,7 @@
         #res tr:nth-child(even){
             background-color: #0bfdfd;
         }
-        #emp th{
+        #res th{
             padding-top:12px;
             padding-bottom:12px;
             text-align:left;
@@ -27,13 +27,12 @@
     </style>
 </head>
 <body>
-    <table>
+    <table  id = "res">
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Name</th>
                 <th>NIC</th>
-                <th>Email</th>
                 <th>Mobile</th>
                 <th>RoomID</th>
                 <th>RoomName</th>
@@ -48,7 +47,6 @@
                     <td>{{$res->id}}</td>
                     <td>{{$res->customerName}}</td>
                     <td>{{$res->NIC}}</td>
-                    <td>{{$res->email}}</td>
                     <td>{{$res->mobile}}</td>
                     <td>{{$res->roomID}}</td>
                     <td>{{$res->roomName}}</td>

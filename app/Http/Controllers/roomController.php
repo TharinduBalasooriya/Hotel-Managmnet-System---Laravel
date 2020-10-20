@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\room_reservation;
+use PDF;
 class roomController extends Controller
 {
     public function save(Request $request){
@@ -40,14 +41,7 @@ class roomController extends Controller
         $room ->delete();
         
         $allData = room_reservation::all();
-        $allData = room_reservation::all();
-        $allData = room_reservation::all();
-        $allData = room_reservation::all();
-        $allData = room_reservation::all();
-        $allData = room_reservation::all();
-        $allData = room_reservation::all();
-        $allData = room_reservation::all();
-        $allData = room_reservation::all();
+      
 
         return view('showmemberbookingdetails')->with('cus',$allData);
 
@@ -83,6 +77,15 @@ class roomController extends Controller
 
     $room = room_reservation::all();
     return view('room', compact('room'));  
+
+    }
+
+    public function downloadRoomReport(){
+
+        $room = room_reservation::all();
+        $pdf = PDF::loadView('getReservationReport', compact ('room'));
+        return $pdf->download('room_report.pdf');
+
 
     }
 

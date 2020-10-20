@@ -127,7 +127,7 @@
               </div>
               <div class="card-footer text-muted bg-light">
                    <a href="/viewReservationList" class="card-link" style="color: rgba(0,178,169,1);">View Details</a>
-                  <a href="#" class="card-link" style="color: rgba(0,178,169,1);"> <i class="fa fa-arrow-circle-right" style="float: right"></i></a>
+                  <a href="/viewReservationList" class="card-link" style="color: rgba(0,178,169,1);"> <i class="fa fa-arrow-circle-right" style="float: right"></i></a>
                    
               </div>
             </div>
@@ -147,8 +147,8 @@
                 </div>
               </div>
               <div class="card-footer text-muted bg-light">
-                   <a href="#" class="card-link" style="color: rgba(0,178,169,1);">View Details</a>
-                  <a href="#" class="card-link" style="color: rgba(0,178,169,1);"> <i class="fa fa-arrow-circle-right" style="float: right"></i></a>
+                   <a href="getReservationReport" class="card-link" style="color: rgba(0,178,169,1);">View Details</a>
+                  <a href="getReservationReport" class="card-link" style="color: rgba(0,178,169,1);"> <i class="fa fa-arrow-circle-right" style="float: right"></i></a>
                    
               </div>
             </div>

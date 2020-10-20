@@ -184,4 +184,4 @@ Route::post('/saveReservation','roomController@save');
 Route::post('/deleteReservation','roomController@delete');
 Route::post('/updateReservation','roomController@update');
 
-Route::get('getReservationReport','roomController@getAllReservations');
+Route::get('/getReservationReport','roomController@downloadRoomReport');
