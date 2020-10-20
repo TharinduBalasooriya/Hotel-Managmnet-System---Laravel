@@ -8,22 +8,24 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Simple Sidebar - Start Bootstrap Template</title>
+  <title>Reserve a Banquet Hall</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href="css/simple-sidebar.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/order_mgmt.css">
 
   <!-- font awsome icons-->
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--food list js-->
 
 </head>
 
 <body>
- 
+
 <div class="d-flex" id="wrapper">
 
 
@@ -48,7 +50,7 @@
             <a href="#" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fa fa-question-circle" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Help</p></a>
           </div>
         </div>
-        <!-- /#sidebar-wrapper -->  
+        <!-- /#sidebar-wrapper -->
 
     <!-- Page Content -->
     <div id="page-content-wrapper">
@@ -58,24 +60,24 @@
       background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
       ">
         <a  id="menu-toggle" href="#"><i class="fa fa-bars fa-2x text-white" aria-hidden="true" ></i></a>
-    
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-    
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item active">
               <a class="nav-link text-white" href="#">Home <i class="fas fa-home"></i> <span class="sr-only">(current)</span></a>
             </li>
-           
+
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="text-white mr-3">{{session('userName', 'Employee')}}</span><i class="fas fa-user text-white"></i>
+                <span class="text-white mr-3">Hi, Manager!</span><i class="fas fa-user text-white"></i>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Home</a>
+                <a class="dropdown-item" href="#">Back</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="/uLogout">Log Out</a>
               </div>
@@ -87,52 +89,75 @@
 
 
       <!-- page contain starts from here-->
-      <div class="container"><!--Banquet Hall-->
-        <h1 class="text-info text-center ">Add Banquet Hall Packages Details</h1>
 
-        <form><!--form-->
-          <div class="form-group">
-            <label for="exampleInputId">ID</label>
-            <input type="id" class="form-control" id="exampleInputId" aria-describedby="id">
-            
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPT">Package Type</label>
-            <input type="pt" class="form-control" id="exampleInputPT" aria-describedby="pt">
-            <small id="pthelp" class="form-text text-muted">Small/Medium/Large</small>
-            
-          </div>
-          
-          <div class="form-group">
-            <label for="exampleInputName">Hall Name</label>
-            <input type="name" class="form-control" id="exampleInputName" aria-describedby="nName">
-            <small id="name" class="form-text text-muted">Golden/Platinum/Christal</small>
-            
-          </div>
-          <div class="form-group">
-            <label for="examplecpr">Charge Per Day</label>
-            <input type="perday" class="form-control" id="examplecpr">
-          </div>
-          
-          <button type="submit" class="btn btn-primary">Submit</button>
-          <button type="submit" class="btn btn-warning">Reset</button>
-          <br>
-          <button type="submit" class="btn btn-danger mt-3  ">I am done and Exit</button>
-        </form><br><!--End of form-->
+        <h1 style="text-align: center;margin-top: 10px;">Add New Banquet Hall Reservation</h1>
 
-        <div class="row"><!--image-->
-          <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-2">
-            
-            <img src="C:\Users\Hp\Desktop\Bootstarp\test\download (1).jfif" class="img-fluid" alt="">
-            </div><!--End of image-->
+        <!--FORM STARTS HERE-->
+        <form action={{$reservation->id?("/saveUpdatedBanquetHallReservation"):("/saveBanquetHallReservation")}} method="POST" class="formDesign" id="reservationForm">
+                {{csrf_field()}}
+            <input type="number" id="id" name="id" value="{{$reservation -> id}}" hidden/>
+            <div class="row ">
+              <div class="col-sm-4 orderFormSide">
 
-        </div>
-          
-
-      </div><!--End of Banquet Hall-->
+              </div>
+              <div class="col-sm-8 orderFormRSide ">
+                <h3 class="orderDetailsH">Customer Details</h3>
 
 
+                <div class="form-group">
+                  <label for="customerName">Name </label>
+                  <input type="text" value="{{$reservation -> customerName}}" class="form-control" name="customerName" placeholder="Name" required>
+                </div>
 
+                <div class="form-group">
+                  <label for="customerMobile">Mobile Number </label>
+                  <input type="tel" value="{{$reservation -> customerMobile}}" class="form-control" name="mobile" placeholder="07X-XXXXXXX" required   pattern="[0-9]{3}-[0-9]{7}">
+                </div>
+
+                <div class="form-group">
+                  <label for="customerEmail">Email </label>
+                  <input type="email" value="{{$reservation -> customerEmail}}" class="form-control" name="email" placeholder="you@yourplace.com" required>
+                </div>
+
+                <br/>
+                <h3 class="orderDetailsH">Reservation Details</h3>
+                  <div class="form-group">
+                      <label for="customerMobile">Date </label>
+                      <input type="date" id="date" name="date" value="{{$reservation -> reservationDate}}" min="2020-09-25" max="2020-12-31">
+                  </div>
+              <div class="form-group">
+                <label for="hallID">Select Hall</label>
+                  <select name="halls" id="halls" form="reservationForm">
+                      <option value="1">Cloud Garden Hall</option>
+                      <option value="2">Amethyst Hall</option>
+                      <option value="3">Phoenix Hall</option>
+                      <option value="4">Rainbow Hall</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                <span>Select Package</span>
+
+                <div class="form-check">
+                  <label class="form-check-label" for="package">
+                    <input type="radio" class="form-check-input" id="package" name="package" value="Budget" checked>Budget</label> <br/>
+                  <label class="form-check-label" for="package">
+                    <input type="radio" class="form-check-input" id="package" name="package" value="Premium">Premium</label>
+                </div>
+              </div>
+
+                    <div class="form-group" style="display: flex;justify-content: center;" >
+                        <button type="submit" class="btn btn-primary">submit</button>
+                    </div>
+
+
+              </div>
+            </div>
+
+
+
+
+        </form>
+        <!--FORM ENDS HERE-->
     </div>
     <!-- /#page-content-wrapper -->
 
@@ -149,6 +174,25 @@
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
+
+    function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("label")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+
+
   </script>
 
 </body>

@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Simple Sidebar - Start Bootstrap Template</title>
+  <title>Banquet Hall Reservations</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -23,7 +23,7 @@
 </head>
 
 <body>
- 
+
 <div class="d-flex" id="wrapper">
 
 
@@ -48,7 +48,7 @@
             <a href="#" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fa fa-question-circle" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Help</p></a>
           </div>
         </div>
-        <!-- /#sidebar-wrapper -->  
+        <!-- /#sidebar-wrapper -->
 
     <!-- Page Content -->
     <div id="page-content-wrapper">
@@ -58,24 +58,24 @@
       background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
       ">
         <a  id="menu-toggle" href="#"><i class="fa fa-bars fa-2x text-white" aria-hidden="true" ></i></a>
-    
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-    
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item active">
               <a class="nav-link text-white" href="#">Home <i class="fas fa-home"></i> <span class="sr-only">(current)</span></a>
             </li>
-           
+
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="text-white mr-3">{{session('userName', 'Employee')}}</span><i class="fas fa-user text-white"></i>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Home</a>
+                <a class="dropdown-item" href="#">Back</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="/uLogout">Log Out</a>
               </div>
@@ -87,50 +87,62 @@
 
 
       <!-- page contain starts from here-->
-      <div class="container"><!--Banquet Hall-->
-        <h1 class="text-info text-center ">Add Banquet Hall Packages Details</h1>
 
-        <form><!--form-->
-          <div class="form-group">
-            <label for="exampleInputId">ID</label>
-            <input type="id" class="form-control" id="exampleInputId" aria-describedby="id">
-            
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPT">Package Type</label>
-            <input type="pt" class="form-control" id="exampleInputPT" aria-describedby="pt">
-            <small id="pthelp" class="form-text text-muted">Small/Medium/Large</small>
-            
-          </div>
-          
-          <div class="form-group">
-            <label for="exampleInputName">Hall Name</label>
-            <input type="name" class="form-control" id="exampleInputName" aria-describedby="nName">
-            <small id="name" class="form-text text-muted">Golden/Platinum/Christal</small>
-            
-          </div>
-          <div class="form-group">
-            <label for="examplecpr">Charge Per Day</label>
-            <input type="perday" class="form-control" id="examplecpr">
-          </div>
-          
-          <button type="submit" class="btn btn-primary">Submit</button>
-          <button type="submit" class="btn btn-warning">Reset</button>
-          <br>
-          <button type="submit" class="btn btn-danger mt-3  ">I am done and Exit</button>
-        </form><br><!--End of form-->
+      <div class="container">
+        <h1 class="text-info text-center">Banquet Hall Reservations</h1>
+        <div class="row">
+          <div class="col-md-12">
+            <table class="table table-dark">
+              <th> Customer Name </th>
+              <th> Email Address </th>
+                <th> Hall ID </th>
+                <th> Reservation Date </th>
+                <th> Package </th>
+                <th></th>
+                <th></th>
+              @foreach($list ?? '' as $r)
+              <tr>
+                <td>{{$r->customerName}}</td>
+                  <td>{{$r->customerEmail}}</td>
+                  <td>{{$r->hallId}}</td>
+                  <td>{{$r->reservationDate}}</td>
+                  <td>{{$r->package}}</td>
+                <td>
+                <form action="/updateBanquetHallReservation" method="post">
+                      {{csrf_field()}}
+                    <input type="number" name="id" value="{{$r->id}}"hidden>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </form>
+                </td>
+                <td>
+                <form action="/deleteBanquetHallReservation" method="post">
+                      {{csrf_field()}}
+                    <input type="number" name="id" value="{{$r->id}}"hidden>
+                    <button type="submit" class="btn btn-warning">Delete</button>
+                </form>
+                </td>
+              </tr>
 
-        <div class="row"><!--image-->
-          <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-2">
-            
-            <img src="C:\Users\Hp\Desktop\Bootstarp\test\download (1).jfif" class="img-fluid" alt="">
-            </div><!--End of image-->
+              @endforeach
+
+
+
+
+
+
+
+
+
+
+            </table>
+
+          </div>
+
 
         </div>
-          
+        <!--<button type="submit" class="btn btn-danger mt-3  ">Back to Reservations</button>-->
 
-      </div><!--End of Banquet Hall-->
-
+      </div>
 
 
     </div>

@@ -149,3 +149,14 @@ Route::post('/updatemember','poolpagescontroller@updatemember');
 
 Route::get('/pooldelete/{id}','poolpagescontroller@pooldeleteDB');
 //======================================================================
+//Banquet Hall Reservations
+Route::get('/addBanquetHallReservation', 'banquetHallsController@goToReserve');
+Route::post('/saveBanquetHallReservation', 'banquetHallsController@store');
+Route::get('/viewBanquetHallReservations', 'banquetHallsController@getReservationList');
+Route::post('/deleteBanquetHallReservation', 'banquetHallsController@deleteReservation');
+Route::post('/updateBanquetHallReservation', 'banquetHallsController@viewReservation');
+Route::post('/saveUpdatedBanquetHallReservation', 'banquetHallsController@updateReservation');
+Route::get('/banquet-hall-reservations', function(){
+    return view('banquet_hall_reservations');
+});
+
