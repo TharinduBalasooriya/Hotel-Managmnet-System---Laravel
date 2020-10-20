@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Task;
+use PDF;
 
 class poolpagescontroller extends Controller
 {
@@ -105,8 +106,21 @@ class poolpagescontroller extends Controller
          $data->delete();
 
         return redirect()->back();
+        
 
+     }
 
+     public function getAllMembers()
+     {
+         $members = Task::all();
+         return view('members',compact('members'));
+     }
+
+     public function downloadPDF()
+     {
+        $members = Task::all();
+        $pdf = PDF::loadView('members',compact('members'));
+        return $pdf->download('member-list-pdf');
      }
 
     

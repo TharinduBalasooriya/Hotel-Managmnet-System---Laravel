@@ -148,4 +148,9 @@ Route::get('/updatepool/{id}','poolpagescontroller@UpdateRec');
 Route::post('/updatemember','poolpagescontroller@updatemember');
 
 Route::get('/pooldelete/{id}','poolpagescontroller@pooldeleteDB');
+
+Route::get('/get-all-member','poolpagescontroller@getAllMembers');
+
+Route::get('/download-pdf', 'poolpagescontroller@downloadPDF');
+
 //======================================================================
