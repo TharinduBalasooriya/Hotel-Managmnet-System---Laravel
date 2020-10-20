@@ -144,8 +144,8 @@
                 </div>
               </div>
               <div class="card-footer text-muted bg-light">
-                   <a href="#" class="card-link " style="color: rgb(242, 112, 156);">View Details</a>
-                  <a href="#" class="card-link " style="color: rgb(242, 112, 156);"> <i class="fa fa-arrow-circle-right" style="float: right"></i></a>
+                   <a href="banquet-hall-reservations" class="card-link " style="color: rgb(242, 112, 156);">View Details</a>
+                  <a href="banquet-hall-reservations" class="card-link " style="color: rgb(242, 112, 156);"> <i class="fa fa-arrow-circle-right" style="float: right"></i></a>
                    
               </div>
             </div>
@@ -188,8 +188,8 @@
                 </div>
               </div>
               <div class="card-footer text-muted bg-light">
-                   <a href="#" class="card-link" style="color: rgba(0,178,169,1);">View Details</a>
-                  <a href="#" class="card-link" style="color: rgba(0,178,169,1);"> <i class="fa fa-arrow-circle-right" style="float: right"></i></a>
+                   <a href="roomReservation" class="card-link" style="color: rgba(0,178,169,1);">View Details</a>
+                  <a href="roomReservation" class="card-link" style="color: rgba(0,178,169,1);"> <i class="fa fa-arrow-circle-right" style="float: right"></i></a>
                    
               </div>
             </div>

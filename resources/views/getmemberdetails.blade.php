@@ -35,7 +35,7 @@
         <div class="bg-dark " id="sidebar-wrapper" style="background: radial-gradient( circle farthest-corner at 10% 20%,  rgba(90,92,106,1) 0%, rgba(32,45,58,1) 81.3% );">
           <div class="sidebar-heading text-white" style="font-weight: bold;">Hotel Chathumadura</div>
           <div class="list-group list-group-flush mt-4">
-            <a href="/home" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fa fa-dashboard" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Dashboard</p></a>
+            <a href="#" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fa fa-dashboard" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Dashboard</p></a>
             <a href="#" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fa fa-bell" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Notifications</p></a>
             <a href="#" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fas fa-envelope-open-text" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Email</p></a>
             <a href="#" class="list-group-item list-group-item-action  text-white bg-transparent"> <i class="fa fa-phone" style="font-size: 24px;"></i><p style="margin-left: 25px;display: inline;font-size: 18px;">Customer Contacts</p></a>
@@ -71,13 +71,13 @@
            
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="text-white mr-3">{{session('userName', 'Employee')}}</span><i class="fas fa-user text-white"></i>
+                <span class="text-white mr-3">Resturent Manager</span><i class="fas fa-user text-white"></i>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">Action</a>
                 <a class="dropdown-item" href="#">Another action</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/uLogout">Log Out</a>
+                <a class="dropdown-item" href="#">Something else here</a>
               </div>
             </li>
           </ul>
@@ -87,52 +87,77 @@
 
 
       <!-- page contain starts from here-->
-      <div class="container"><!--Banquet Hall-->
-        <h1 class="text-info text-center ">Add Banquet Hall Packages Details</h1>
+      <div class="container">
+        <h1 class="text-info text-center ">Get Customer Details To Reservation</h1>
 
-        <form><!--form-->
-          <div class="form-group">
-            <label for="exampleInputId">ID</label>
-            <input type="id" class="form-control" id="exampleInputId" aria-describedby="id">
-            
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPT">Package Type</label>
-            <input type="pt" class="form-control" id="exampleInputPT" aria-describedby="pt">
-            <small id="pthelp" class="form-text text-muted">Small/Medium/Large</small>
-            
-          </div>
+        <form action="/saveReservation" method="post"><!--form-->
           
-          <div class="form-group">
-            <label for="exampleInputName">Hall Name</label>
-            <input type="name" class="form-control" id="exampleInputName" aria-describedby="nName">
-            <small id="name" class="form-text text-muted">Golden/Platinum/Christal</small>
-            
-          </div>
-          <div class="form-group">
-            <label for="examplecpr">Charge Per Day</label>
-            <input type="perday" class="form-control" id="examplecpr">
-          </div>
+          @csrf
+            <label for="fname">Customer Name</label>
+            <input type="text" id="fname" name="name" placeholder="Customer Name...">
+             <br>
+            <br>
+
           
-          <button type="submit" class="btn btn-primary">Submit</button>
-          <button type="submit" class="btn btn-warning">Reset</button>
+            <label for="ccnum">NIC</label>
+            <input type="text" id="ccnum" name="nic" placeholder="9708811872V">
+            <br>
+            <br>
+        
+           <label for="email"><i class="fa fa-envelope"></i>Customer Email</label>
+            <input type="text" id="email" name="email" placeholder="someone@example.com">
+            <br>
+            <br>
+
+            <label for="ccnum">Customer Mobile Number</label>
+            <input type="number" id="ccnum" name="mobile" placeholder="0771452631">
+            <br>
+            <br>
+          
+          
+            <label for="fname">Room ID</label>
+            <input type="text" id="fname" name="rName" placeholder="R1/R2">
+             <br>
+            <br>
+
+
+            <label for="fname">Room Name</label>
+            <input type="text" id="fname" name="roomName" placeholder="Room Name...">
+             <br>
+            <br>
+
+
+            <label for="ccnum">Room Charge </label>
+            <input type="number" id="ccnum" name="price" placeholder="LKR">
+            <br>
+            <br>
+          
+
+             <label for="cidate">Check in date</label><br>
+           <input type="date" id="cidate" name="cidate" value="date"><br>
+            <label for="codate">Check out date</label><br>
+            <input type="date" id="codate" name="codate" value="date"><br><br>
+
+            
+        
+
+          <button type="submit" class="btn btn-success">Make A Book</button>
+          
           <br>
-          <button type="submit" class="btn btn-danger mt-3  ">I am done and Exit</button>
+          <button type="submit" class="btn btn-danger mt-3  ">Exit</button>
         </form><br><!--End of form-->
 
-        <div class="row"><!--image-->
-          <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-2">
-            
-            <img src="C:\Users\Hp\Desktop\Bootstarp\test\download (1).jfif" class="img-fluid" alt="">
-            </div><!--End of image-->
+        
 
-        </div>
-          
+      </div>
+      
+       
+      
 
-      </div><!--End of Banquet Hall-->
-
-
-
+     
+      
+      
+     </div>
     </div>
     <!-- /#page-content-wrapper -->
 
