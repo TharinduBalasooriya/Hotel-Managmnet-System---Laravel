@@ -160,3 +160,28 @@ Route::get('/banquet-hall-reservations', function(){
     return view('banquet_hall_reservations');
 });
 
+//room reservation routes
+Route::get('/roomReservation', function () {
+   
+    return view('roomsinterface');
+});
+
+Route::get('/addRoom', function () {
+    return view('addrooms');
+});
+
+Route::get('/getDetails', function () {
+    return view('CheckRooms');
+});
+
+Route::get('/getMemeber', function () {
+    return view('getmemberdetails');
+});
+
+Route::post('/viewReservation','roomController@view');
+Route::get('/viewReservationList','roomController@viewAll');
+Route::post('/saveReservation','roomController@save');
+Route::post('/deleteReservation','roomController@delete');
+Route::post('/updateReservation','roomController@update');
+
+Route::get('getReservationReport','roomController@getAllReservations');
