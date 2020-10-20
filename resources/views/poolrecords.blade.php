@@ -3,6 +3,7 @@
     echo App\Http\Controllers\employeeContoller::slogout();
   @endphp
 @else
+
 <!DOCTYPE html>
 <html>
     <head>

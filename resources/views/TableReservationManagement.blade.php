@@ -26,20 +26,11 @@
   <!-- font awsome icons-->
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
+    
 
 <body>
  
 <div class="d-flex" id="wrapper">
-
-
-
-
-
 
         <!-- Sidebar -->
         <div class="bg-dark " id="sidebar-wrapper" style="background: radial-gradient( circle farthest-corner at 10% 20%,  rgba(90,92,106,1) 0%, rgba(32,45,58,1) 81.3% );">
@@ -97,10 +88,10 @@
 
 
       <!-- page contain starts from here-->
-      <h2 style="text-align: center;margin-top: 30px;"> Table Reservations Management</h2>
+      <h1 style="text-align: center;margin-top: 30px; color:#dc7633  "> Welcome to Table Reservations </h1>
 
       <div class="row" style="margin: 30px; margin-left: 8%;">
-        <div class="col-sm-3">
+        <div class="col-sm-4">
 
           <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
             <div class="card-header text-center"> Today Reservations </div>
@@ -114,7 +105,7 @@
         </div>
 
 
-        <div class="col-sm-3">
+        <div class="col-sm-4">
 
           <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
             <div class="card-header text-center"> Current in House </div>
@@ -127,7 +118,7 @@
 
         </div>
 
-        <div class="col-sm-3">
+        <div class="col-sm-4">
 
           <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
             <div class="card-header text-center"> Expected Arrivals </div>
@@ -136,70 +127,65 @@
               </div>
             </div>
           </div>
-  
-  <div class="iframe">
-  <div style="text-align:center;padding:1em 0;"> <h3><a style="text-decoration:none;" href="https://www.zeitverschiebung.net/en/country/lk"><span style="color:gray;"> <b> Today </b> <br></span> </a></h3><iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=medium&timezone=Asia%2FColombo&show=hour_minute" width="110%" height="170%" frameborder="0" seamless></iframe> </div>  
-  </div>
 </div>
+
   <br> <br> 
 
-      <div class="row customCard"  style="padding-left: 150px;padding-right: 30px " >
 
-        <div class="col-sm-6">
-          <div class="card text-white text-center" style="background-color: #6c33a3;
-          background-image: linear-gradient(316deg, #6c33a3 0%, #8241b8 50%);">
-            <div class="card-body">
-              <i class="fa fa-plus-circle fa-5x mt-3" aria-hidden="true"></i>
-             <a href="/tablecreate"><h3 > Create a New Reservation </h3></a>
+  <div class="row customCard"  style="padding-left: 30px;padding-right: 30px; " >
+
+          <div class="col-sm-6">
+            <div class="card text-white text-center" style="background-color: #6c33a3;
+            background-image: linear-gradient(316deg, #6c33a3 0%, #8241b8 74%);">
+              <div class="card-body">
+                <i class="fa fa-plus-circle fa-5x mt-3" aria-hidden="true"></i>
+                <a href="/tablecreate" class="text-white"><h3 > Create a New Reservation </h3></a>
+              </div>
+              
             </div>
-            
+
           </div>
 
-        </div>
-
-        <div class="col-sm-6">
-          <div class="card text-white text-center" style="background-color: #3bb78f;
-          background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 50%);
-          ">
-            <div class="card-body">
-              <i class="fa fa-list fa-5x mt-3" aria-hidden="true"></i>
-              <h3 > Update Table Reservation </Table></h3>
+          <div class="col-sm-6">
+            <div class="card text-white text-center" style="background-color: #3bb78f;
+            background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+            ">
+              <div class="card-body">
+                <i class="fa fa-list fa-5x mt-3" aria-hidden="true"></i>
+                <a href="/tabledisplay" class="text-white" ><h3 > Update Table Reservation </h3></a>
+              </div>
+              
             </div>
-            
+
+          </div> 
+
+          <div class="col-sm-6">
+            <div class="card text-white text-center" style="background-color: #2a2a72;
+            background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);">
+              <div class="card-body">
+                  <i class="fas fa-chart-bar fa-5x mt-3"></i>
+                  <a href="/downloadtablepdf" class="text-white"> <h3 > Quick Report </h3>
+              </div>
+              
+            </div>
+
           </div>
 
-        </div>
-
-        <div class="col-sm-6">
-          <div class="card text-white text-center" style="background-color: #2a2a72;
-          background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 50%);">
-            <div class="card-body">
-              <i class="fa fa-plus-circle fa-5x" aria-hidden="true"></i>
-              <h3 > See Available Waiters </h3>
+          <div class="col-sm-6">
+            <div class="card text-white text-center" style="background-color: #2a2a72;
+            background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);">
+              <div class="card-body">
+              <i class="fa fa-file fa-5x mt-3" aria-hidden="true"></i>
+                <a href="/gettablepdf" class="text-white"><h3 > View All Reservations </h3></a>
+              </div>
+              
             </div>
-            
+
           </div>
-
-        </div>
-
-        <div class="col-sm-6">
-          <div class="card text-white text-center" style="background-color: #ffd700;
-          background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 50%);">
-            <div class="card-body">
-              <i class="fa fa-plus-circle fa-5x" aria-hidden="true"></i>
-              <h3 > See Table Reservations Details </h3>
-            </div>
-            
-          </div>
-
-        </div>
        <!--item list finish -->
       </div>
 
-      
-
-
-
+  
     </div>
     <!-- /#page-content-wrapper -->
 

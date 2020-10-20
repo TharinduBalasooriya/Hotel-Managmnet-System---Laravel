@@ -1,11 +1,13 @@
 div.container01 {
     position: absolute;
     width: 45%;
-    height: 20cm;
+    height: 15.6cm;
     border: 2px solid black;
-    left: 480px;
+    left: 500px;
     text-align: center;
     padding-right: 20px;
+    padding-top: 10px;
+    top: 80px;
 }
 
 input[type=text] {
@@ -70,9 +72,10 @@ input[type=time] {
  }
 
  label {
-   font-size: 15px;
+   font-size: 16px;
    font-family: serif;
    padding-left: 2cm;
+   padding-top: 12px;
  }
 
  #button {
@@ -83,12 +86,12 @@ input[type=time] {
   	font-size: 17px;
   	border-radius: 12px;
   	cursor: pointer;
-  	width: 40%;
+  	width: 38%;
   	background: transparent;
   	border-color:black;	
   	border-width: 3px;  
   	border-bottom-style:solid;
-    height: 40px;
+    height: 35px;
     color: black;
 }
 

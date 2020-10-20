@@ -95,8 +95,9 @@ Route::post('/updateUser','employeeContoller@updateUser');
 Route::post('/deleteUser','employeeContoller@deleteUser');
 
 //=========================================================
-//===Tharika routes====///
-Route::get('/tablecreate', function () {
+//===Tharika====Table Reservations=========================
+
+Route::get('/tablecreate', function () { 
     return view('CreateTableReservations');
 });
 
@@ -122,6 +123,12 @@ Route::get('/tableupdateRes/{id}','InsertController@tableUpdate');
 Route::post('/tableDBupdate', 'InsertController@tableDBUpdate');
 
 Route::get('/tabledelete/{id}','InsertController@tableDeleteData');
+
+Route::get('/gettablepdf','InsertController@getAllTableRes');
+
+Route::get('/downloadtablepdf','InsertController@tableResPdf'); 
+
+
 //=====================================================================
 
 //===================gaya3 routes=======================================
