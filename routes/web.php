@@ -97,7 +97,7 @@ Route::post('/deleteUser','employeeContoller@deleteUser');
 //=========================================================
 //===Tharika====Table Reservations=========================
 
-Route::get('/tablecreate', function () { 
+Route::get('/tablecreate', function () {
     return view('CreateTableReservations');
 });
 
@@ -109,10 +109,10 @@ Route::get('/tableMyHome', function() {
     return view('TableReservationManagement');
 });
 
-Route::post('/tablesave', 'InsertController@tableInsert');   
+Route::post('/tablesave', 'InsertController@tableInsert');
 
 Route::get('/tabledisplay', function() {
-  
+
     $data=App\Insert::all();
 
     return view('ReservationDisplay')->with('display', $data);
@@ -126,7 +126,7 @@ Route::get('/tabledelete/{id}','InsertController@tableDeleteData');
 
 Route::get('/gettablepdf','InsertController@getAllTableRes');
 
-Route::get('/downloadtablepdf','InsertController@tableResPdf'); 
+Route::get('/downloadtablepdf','InsertController@tableResPdf');
 
 
 //=====================================================================
@@ -169,14 +169,15 @@ Route::post('/saveBanquetHallReservation', 'banquetHallsController@store');
 Route::get('/viewBanquetHallReservations', 'banquetHallsController@getReservationList');
 Route::post('/deleteBanquetHallReservation', 'banquetHallsController@deleteReservation');
 Route::post('/updateBanquetHallReservation', 'banquetHallsController@viewReservation');
-Route::post('/saveUpdatedBanquetHallReservation', 'banquetHallsController@updateReservation');
+Route::post('/saveUpdatedBanquetHallReservation', 'banquetsHallsController@updateReservation');
+Route::get('downloadBanquetHallReservationsReport','banquetHallsController@downloadReservationReport');
 Route::get('/banquet-hall-reservations', function(){
     return view('banquet_hall_reservations');
 });
 
 //room reservation routes
 Route::get('/roomReservation', function () {
-   
+
     return view('roomsinterface');
 });
 

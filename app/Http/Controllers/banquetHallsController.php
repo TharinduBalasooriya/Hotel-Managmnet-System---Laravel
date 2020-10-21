@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\banquetHallReservations;
 use App\halls;
+use PDF;
 
 class banquetHallsController extends Controller
 {
@@ -75,5 +76,10 @@ class banquetHallsController extends Controller
 
     }
 
-   
+    public function downloadReservationReport(){
+        $reservationList =  banquetHallReservations::all();
+        $pdf = PDF::loadView('banquetHallReservationListPdf', ['list' => $reservationList])->setPaper('a4', 'portrait');
+        return $pdf->download('banquet_hall_reservation_report.pdf');
+    }
+
 }

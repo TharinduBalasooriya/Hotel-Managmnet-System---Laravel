@@ -113,8 +113,6 @@
 
             </div>
           </div>
-
-
         </div>
 
         <div class="col-sm-4">
@@ -123,13 +121,10 @@
             <div class="card-header text-center">Available Halls</div>
             <div class="card-body">
               <h1 style="text-align: center;">4</h1>
-
             </div>
           </div>
 
-
         </div>
-
 
 
       </div>
@@ -160,7 +155,7 @@
 
         </div>
 
-        <div class="col-sm-6">
+        <!--<div class="col-sm-6">
           <div class="card text-white text-center" style="background-color: #2a2a72;
           background-image: linear-gradient(315deg, #444444 0%, #00aa00 74%);">
             <div class="card-body">
@@ -169,19 +164,16 @@
             </div>
 
           </div>
-
-        </div>
+        </div>-->
 
         <div class="col-sm-6">
           <div class="card text-white text-center" style="background-color: #2a2a72;
           background-image: linear-gradient(315deg, #444444 0%, #00aa00 74%);">
             <div class="card-body">
             <i class="fa fa-file fa-5x mt-3" aria-hidden="true"></i>
-              <h3 >Reports</h3>
+                <a href="downloadBanquetHallReservationsReport" class="text-white"><h3>Get Report</h3></a>
             </div>
-
           </div>
-
         </div>
        <!--item list finish -->
       </div>
