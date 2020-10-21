@@ -82,4 +82,10 @@ class banquetHallsController extends Controller
         return $pdf->download('banquet_hall_reservation_report.pdf');
     }
 
+    public function downloadReservationReceipt(Request $request){
+        $reservation = banquetHallReservations::find($request -> id);
+        $pdf = PDF::loadView('banquetHallReservationReceipt', ['reservation' => $reservation])->setPaper('a4', 'landscape');
+        return $pdf->download('banquet_hall_reservation_receipt.pdf');
+    }
+
 }

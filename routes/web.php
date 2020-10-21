@@ -170,7 +170,8 @@ Route::get('/viewBanquetHallReservations', 'banquetHallsController@getReservatio
 Route::post('/deleteBanquetHallReservation', 'banquetHallsController@deleteReservation');
 Route::post('/updateBanquetHallReservation', 'banquetHallsController@viewReservation');
 Route::post('/saveUpdatedBanquetHallReservation', 'banquetsHallsController@updateReservation');
-Route::get('downloadBanquetHallReservationsReport','banquetHallsController@downloadReservationReport');
+Route::get('/downloadBanquetHallReservationsReport','banquetHallsController@downloadReservationReport');
+Route::post('/downloadBanquetHallReservationReceipt','banquetHallsController@downloadReservationReceipt');
 Route::get('/banquet-hall-reservations', function(){
     return view('banquet_hall_reservations');
 });

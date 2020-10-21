@@ -100,6 +100,7 @@
                 <th> Package </th>
                 <th></th>
                 <th></th>
+                <th></th>
               @foreach($list ?? '' as $r)
               <tr>
                 <td>{{$r->customerName}}</td>
@@ -121,6 +122,13 @@
                     <button type="submit" class="btn btn-warning">Delete</button>
                 </form>
                 </td>
+                  <td>
+                      <form action="downloadBanquetHallReservationReceipt" method="post">
+                          {{csrf_field()}}
+                          <input type="number" name="id" value="{{$r->id}}"hidden>
+                          <button type="submit" class="btn btn-info">Receipt</button>
+                      </form>
+                  </td>
               </tr>
 
               @endforeach
