@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\user_details;
 use App\testLogin;
+use PDF;
 
 class employeeContoller extends Controller
 {
@@ -27,7 +28,7 @@ class employeeContoller extends Controller
 
       
         
-        
+        //insert to database
         $user->save();
 
         return view('index');
@@ -52,7 +53,8 @@ class employeeContoller extends Controller
             }
         }
 
-        return view('userLogin')->with('message', 'Login Failed');
+        return view('userLogin')->withErrors('Login Failed');
+        
 
     }
 
@@ -74,14 +76,14 @@ class employeeContoller extends Controller
 
     public function getUserDetails(Request $request){
 
-        $id = session('userID', 'GM');
+        $id = session('userID', '1');
         $allData =  user_details::find($id);
 
         return view('employee-profile')->with('user',$allData);
     }
 
     public function updateUser(Request $request){
-
+        
         $userId = $request->id;
         $user =  user_details::find($userId);
 
@@ -108,5 +110,10 @@ class employeeContoller extends Controller
         return redirect()->action('employeeContoller@logout');
 
 
+    }
+    public function downloadbankdetails(){
+        $bankdetails = user_details::all();
+        $pdf = PDF::loadView('employee-bankdetails', compact ('bankdetails'));
+        return $pdf->download('bank_details_report.pdf');
     }
 }

@@ -153,14 +153,14 @@
                     <i class="fa fa-money fa-5x" aria-hidden="true"></i>
                   </div>
                   <div class="col-lg-8" style="text-align:right">
-                      <h4>Staff Payroll</h4>
+                      <h4>Staff Bank Report</h4>
                   </div>
                   
                 </div>
               </div>
               <div class="card-footer text-muted bg-light">
-                   <a href="#" class="card-link " style="color: rgba(165,41,185,1);">View Details</a>
-                  <a href="#" class="card-link " style="color: rgba(165,41,185,1);"> <i class="fa fa-arrow-circle-right" style="float: right"></i></a>
+                   <a href="downloadbankreport" class="card-link " style="color: rgba(165,41,185,1);">View Details</a>
+                  <a href="downloadbankreport" class="card-link " style="color: rgba(165,41,185,1);"> <i class="fa fa-arrow-circle-right" style="float: right"></i></a>
                    
               </div>
             </div>

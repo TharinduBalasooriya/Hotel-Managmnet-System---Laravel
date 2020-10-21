@@ -53,6 +53,9 @@
             <a href="#" class="float-right">Forgot Password?</a>
         </div>        
     </form>
+    @if($errors->any())
+        <h4 class="alert alert-danger" role="alert">{{$errors->first()}}</h4>
+    @endif  
    
 </div>
 </body>

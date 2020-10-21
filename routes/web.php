@@ -93,6 +93,7 @@ Route::get('/uLogout','employeeContoller@logout');
 Route::get('/getUser','employeeContoller@getUserDetails');
 Route::post('/updateUser','employeeContoller@updateUser');
 Route::post('/deleteUser','employeeContoller@deleteUser');
+Route::get('/downloadbankreport','employeeContoller@downloadbankdetails');
 
 //=========================================================
 //===Tharika====Table Reservations=========================
