@@ -11,6 +11,15 @@
   <title>Reserve a Banquet Hall</title>
 
   <!-- Bootstrap core CSS -->
+    <style>
+        .orderFormSideNew{
+            background-image: url("images/banq_form.png");
+            background-position: center; /* Center the image */
+            background-size: cover;
+            border-top-left-radius: 100px;
+            border-bottom-left-radius: 100px;
+        }
+    </style>
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
@@ -97,7 +106,7 @@
                 {{csrf_field()}}
             <input type="number" id="id" name="id" value="{{$reservation -> id}}" hidden/>
             <div class="row ">
-              <div class="col-sm-4 orderFormSide">
+              <div class="col-sm-4 orderFormSideNew">
 
               </div>
               <div class="col-sm-8 orderFormRSide ">
@@ -123,7 +132,7 @@
                 <h3 class="orderDetailsH">Reservation Details</h3>
                   <div class="form-group">
                       <label for="customerMobile">Date </label>
-                      <input type="date" id="date" name="date" value="{{$reservation -> reservationDate}}" min="2020-09-25" max="2020-12-31">
+                      <input type="date" id="date" name="date" value="{{$reservation -> reservationDate}}" min="2020-10-22" max="2021-10-21">
                   </div>
               <div class="form-group">
                 <label for="hallID">Select Hall</label>

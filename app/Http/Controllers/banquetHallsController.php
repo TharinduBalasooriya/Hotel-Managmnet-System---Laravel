@@ -78,7 +78,7 @@ class banquetHallsController extends Controller
 
     public function downloadReservationReport(){
         $reservationList =  banquetHallReservations::all();
-        $pdf = PDF::loadView('banquetHallReservationListPdf', ['list' => $reservationList])->setPaper('a4', 'portrait');
+        $pdf = PDF::loadView('banquetHallReservationListPdf', ['list' => $reservationList])->setPaper('a4', 'landscape');
         return $pdf->download('banquet_hall_reservation_report.pdf');
     }
 
